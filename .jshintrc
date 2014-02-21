@@ -1,0 +1,9 @@
+{
+  "undef": true,
+  "unused": true,
+  "node": true,
+  "laxcomma": true
+  // "globals": {
+  //   "MY_GLOBAL": false
+  // }
+}

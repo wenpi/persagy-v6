@@ -1,0 +1,16 @@
+{
+  "name": "persagy-v6",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "*",
+    "ejs": "*",
+    "validator": "*",
+    "sanitizer": "*",
+    "eventproxy": "*",
+    "async": "*"
+  }
+}
