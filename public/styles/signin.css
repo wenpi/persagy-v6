@@ -1,0 +1,9 @@
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+body, button, input, select, textarea,h1, h2, h3, h4, h5, h6  /* for ie */ {
+  font-family: 'Microsoft YaHei';
+}
