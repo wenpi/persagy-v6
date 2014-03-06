@@ -13,6 +13,7 @@ results
 
 npm-debug.log
 node_modules
+public/js/lib
 
 # Ignore Mac OS desktop services store
 .DS_Store

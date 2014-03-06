@@ -1,0 +1,25 @@
+{
+  "name": "persagy-5s",
+  "version": "0.1.0",
+  "homepage": "localhost",
+  "authors": [
+    "LiTao <litao@persagy.com>"
+  ],
+  "description": "persagy home page",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public",
+    "controllers",
+    "managers",
+    "view"
+  ],
+  "dependencies": {
+    "jquery": "^1.11.0",
+    "angular": "~1.2.14",
+    "angular-ui-router": "~0.2.8"
+  }
+}

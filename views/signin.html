@@ -15,6 +15,12 @@
   </head>
   <body>
     <div class="container">
+      <% if(locals.error){ %>
+      <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong><%= error %></strong>
+      </div>
+      <% } %>
       <form class="form-signin" method="post" action="/signin" role="form">
         <h2 class="form-signin-heading">请登陆</h2>
         <input type="text" class="form-control" placeholder="用户名" name="id" required autofocus>

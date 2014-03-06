@@ -1,5 +1,5 @@
-var validator = require('validator'),
-  sanitize = require('sanitizer').sanitize;
+var validator = require('validator');
+var sanitize = require('sanitizer').sanitize;
 var crypto = require('crypto');
 var config = require('../config').config;
 
