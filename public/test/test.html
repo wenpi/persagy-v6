@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+  <script type="text/javascript" src="js/jquery.mobile.event.js"></script>
+</head>
+<body>
+  <button id="click">click</button>
+  <div><span><ul><li><div></div></li></ul></span></div>
+<!--   <script type="text/javascript">
+  $(function(){
+    $('#click').on('tap',function(){
+      throw new Error('test');
+      alert('nice!');
+    });
+  })
+  </script> -->
+
+
+<script type="text/javascript" src="../js/lib/requirejs/require.js"></script>
+<script>
+    require(['main'], function(main) {
+        // main.hello();
+    });
+</script>
+<!-- <script data-main="main" src="../js/lib/requirejs/require.js"></script> -->
+</body>
+</html>
