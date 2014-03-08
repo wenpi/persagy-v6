@@ -2,32 +2,85 @@
 <html lang="zh-CN">
   <head>
     <title>登陆</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, minimum-scale=0.8, maximum-scale=0.8, user-scalable=no" />
+    <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/index.css" >
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
   <body>
-    <div class="container">
-      <div class="masthead">
-        <h3 class="text-muted">Project name</h3>
-        <ul class="nav nav-justified">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Downloads</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="/signout">退出</a></li>
+    <div id="header">
+    <div id="head_right">
+      <ul>
+        <li class="h_Exit"><a href="/signout">注销</a></li>
+        <li class="h_Manage">管理员</li>
+        <li class="h_CallPolice">8</li>
+      </ul>
+    </div>
+    <div id="head_title">
+      <div>国家电网能源管理平台</div>
+    </div>
+  </div>
+  <div class="head_navWrap">
+    <div id="head_Menu" class="head_Menu"></div>
+    <div  class="navList">
+      <div class="nav" id="nav">
+        <ul class="nav_option nav_o1">
+          <li>
+            <a href="#">
+            <div class="o_ico o_overviewMessage">
+              <span></span>
+            </div>
+            <div class="o_text">总览信息</div>
+            </a>
+          </li>
+          <li><a href="#">
+            <div class="o_ico o_map"><span></span></div>
+            <div class="o_text">GIS地图</div></a>
+          </li>
+          <li><a href="#">
+            <div class="o_ico o_BuildingContrast"><span></span></div>
+            <div class="o_text">建筑对比</div></a>
+          </li>         
+          <li><a href="#">
+            <div class="o_ico o_management"><span></span></div>
+            <div class="o_text">对标管理</div></a>
+          </li>
+          <li><a href="#">
+            <div class="o_ico o_PrintIt"><span></span></div>
+            <div class="o_text">报表打印</div></a>
+          </li>
+        </ul>
+        <div class="column">
+          
+        </div>
+        <ul class="nav_option nav_o2">
+          <li></li>
+          <li></li>
+          <li></li>
         </ul>
       </div>
-      <div>test</div>
-    </div> <!-- /container -->
-    <script data-main=".js/app/init/main" src="./js/lib/requirejs/require.js"></script>
+    </div>
+  </div>
+  <div class="py_container">
+    <div class="py_content">
+      <table class="py_table" border="0" cellspacing="10" cellpadding="10">
+        <tr  rowspan="1">
+          <td></td>
+          <td></td>
+          <td colspan="2"></td>
+        </tr>
+        <tr>
+          <td colspan="2" rowspan="2"></td>
+          <td ></td>
+          <td ></td>
+        </tr>
+        <tr>
+          <td ></td>
+          <td ></td>
+        </tr>
+      </table>
+    </div>
+    <span app-version></span>
+  </div>
+    <script data-main="./js/app/init/main" src="./js/lib/requirejs/require.js"></script>
   </body>
 </html>

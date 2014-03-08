@@ -6,25 +6,31 @@ require.config({
     text: '../../lib/requirejs-text/text',
     jquery: '../../lib/jquery/dist/jquery',
     highcharts: '../../lib/highcharts.src.latest',
-    sagyChart: '../../lib/sagyChart'
+    sagyChart: '../../lib/sagyChart.src',
+    jqueryMobile: '../../lib/jquery.mobile.event',
   },
   shim: {
-    'angular': {
+    angular: {
       exports: 'angular'
     },
-    'uiRouter': {
+    jqueryMobile: {
+      deps: ['jquery']
+    },
+    uiRouter: {
       deps: ['angular']
     },
-    'highcharts': {
+    highcharts: {
       exports: 'Highcharts',
       deps: ['jquery']
     },
     sagyChart: {
       deps: ['highcharts']
     }
-  }
+  },
+  deps: [
+    './bootstrap'
+  ]
   // priority: [
-  //   "angular"
+  //   'jquery'
   // ]
 });
-

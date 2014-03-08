@@ -1,0 +1,3 @@
+define(['./app-version'], function() {
+
+});

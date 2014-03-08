@@ -1,88 +1,132 @@
-body {
-  padding-top: 20px;
+* {
+  font-family: Arial,"方正黑体简体","黑体",微软雅黑,Microsoft YaHei,SimHei,SimSun;color: #4f4f4f;
+}
+body ::-webkit-scrollbar {
+  width:8px;height: 8px;
+}
+body ::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.1);-webkit-border-radius: 8px;
+}
+body ::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 8px;background: rgba(0, 0, 0, 0.3);
+}
+body ::-webkit-scrollbar-thumb:vertical:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.clearfix:before, .clearfix:after {
+  content: '.';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
 }
 
-.footer {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  margin-top: 40px;
-  border-top: 1px solid #eee;
+.clearfix:after {
+  clear: both;
+}
+body{cursor:default;font-family:微软雅黑,Microsoft YaHei,"方正黑体简体","黑体";}
+a{text-decoration:none;color:#ffffff;}
+b {font-weight: normal;}
+
+#header{width:100%;height:60px;background:#34373c;position:fixed;left:0;top:0;}
+#head_title{width:auto;margin:0 auto;max-width:260px;min-width:200px;text-align:center;height:60px;}
+#head_title>div{
+padding-left:50px;height:60px;line-height:65px;font-size:20px;text-align:left;
+color:rgba(255,255,255,.9);float:left;background:url(../imgs/nav/title_logo.png) no-repeat 0px 15px;
+}
+#head_right{
+  float:right;min-width:300px;height:60px;color:#808080;padding-right:50px;
+}
+#head_right ul{height:30px;padding-top:15px;line-height:30px;}
+#head_right ul li{
+  cursor:pointer;min-width:30px;width:auto;float:right;color:#ffffff;
+  border-left:1px solid #5f646c;padding:0 15px 0 50px;opacity:.8;
+  background-image:url(../imgs/nav/header_right.png);
+  background-repeat:no-repeat;height:30px;line-height:30px;
+  background-position:0px 0px;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  background-color: transparent;
+#head_right ul li:hover{opacity:1;}
+
+#head_right ul li.h_Exit{background-position:10px -60px;}
+#head_right ul li.h_Manage{background-position:10px -30px;}
+#head_right ul li.h_CallPolice{background-position:10px 0px;}
+
+#head_Menu{
+  cursor:pointer;float:left;width:100px;height:60px;
+  background-image:url(../imgs/nav/head_menu.png);
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-color:rgba(42,167,56,.9);
 }
-.jumbotron .btn {
-  padding: 14px 24px;
-  font-size: 21px;
+.head_navWrap{width:auto;position:fixed;left:0;top:0;}
+#head_Menu:hover{background-color:rgba(42,167,56,1);}
+.navList{
+  position:fixed;top:60px;
+  left:-130px;width:100px;
+  /*left:0px;width:240px;*/
+  height:100%;
+  cursor:pointer;
+  overflow:hidden;
+  background: #4a555e;
+  box-shadow: 3px 0px 5px rgba(0,0,0,.3);
+  -webkit-box-shadow: 3px 0px 5px rgba(0,0,0,.3);
+  -webkit-transition:.3s linear;
+  transition:.3s linear;
+}
+.nav_option{width:240px;overflow:hidden;}
+.nav_option li{
+  height:60px;line-height:60px;background: #4a555e;
+  color:#ffffff;font-size:16px;text-align:left;
+  border-bottom:1px solid #535e66;
+}
+.nav_option li a{width:100%;height:60px;display:block;}
+.nav_option li div.o_ico{
+  width:100px;height:60px;float:left;opacity:.5;
+  background-position:0 0;
+  background-repeat:no-repeat;
+  background-image:url(../imgs/nav/nav_optionIco.png);
+}
+.nav_option li div.o_overviewMessage{background-position:center 0;}
+.nav_option li div.o_map{background-position:center -60px;}
+.nav_option li div.o_BuildingContrast{background-position:center -120px;}
+.nav_option li div.o_management{background-position:center -180px;}
+.nav_option li div.o_PrintIt{background-position:center -240px;}
+
+.nav_option li div.o_ico span{display:block;float:left;width:6px;height:60px;}
+
+.nav_option li div.o_text{width:140px;height:60px;float:left;color:#ffffff;}
+
+
+.nav_option li:hover{
+  background:#5b6771;
+}
+.nav_option li:hover div.o_ico{
+  opacity:1;
+}
+.nav_option li:hover div.o_ico span{
+  background:#2aa738;
 }
 
-/* Customize the nav-justified links to be fill the entire space of the .navbar */
-
-.nav-justified {
-  background-color: #eee;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.py_container{
+  width:100%;height:auto;min-height:450px;height:auto;
 }
-.nav-justified > li > a {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin-bottom: 0;
-  font-weight: bold;
-  color: #777;
-  text-align: center;
-  background-color: #e5e5e5; /* Old browsers */
-  background-image:    -moz-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%); /* FF3.6+ */
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
-  background-image: -webkit-linear-gradient(top, #f5f5f5 0%,#e5e5e5 100%); /* Chrome 10+,Safari 5.1+ */
-  background-image:      -o-linear-gradient(top, #f5f5f5 0%,#e5e5e5 100%); /* Opera 11.10+ */
-  background-image:         linear-gradient(top, #f5f5f5 0%,#e5e5e5 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
-  background-repeat: repeat-x; /* Repeat the gradient */
-  border-bottom: 1px solid #d5d5d5;
+.py_content{
+  min-width:1280px;
+  max-width:1600px;
+  margin:0 auto;
+  /*border:1px solid blue;*/
+  min-height:490px;
+  height:auto;
+  padding-top:60px;
 }
-.nav-justified > .active > a,
-.nav-justified > .active > a:hover,
-.nav-justified > .active > a:focus {
-  background-color: #ddd;
-  background-image: none;
-  box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
+.py_table{
+  width: 100%;
 }
-.nav-justified > li:first-child > a {
-  border-radius: 5px 5px 0 0;
-}
-.nav-justified > li:last-child > a {
-  border-bottom: 0;
-  border-radius: 0 0 5px 5px;
-}
-
-@media (min-width: 768px) {
-  .nav-justified {
-    max-height: 52px;
-  }
-  .nav-justified > li > a {
-    border-right: 1px solid #d5d5d5;
-    border-left: 1px solid #fff;
-  }
-  .nav-justified > li:first-child > a {
-    border-left: 0;
-    border-radius: 5px 0 0 5px;
-  }
-  .nav-justified > li:last-child > a {
-    border-right: 0;
-    border-radius: 0 5px 5px 0;
-  }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .masthead,
-  .marketing,
-  .footer {
-    padding-right: 0;
-    padding-left: 0;
-  }
+.py_table td{
+  height: 300px;
+  border:1px solid red;
 }

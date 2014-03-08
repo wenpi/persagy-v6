@@ -21,6 +21,7 @@
     "jquery": "^1.11.0",
     "angular": "~1.2.14",
     "angular-ui-router": "~0.2.8",
-    "requirejs":"~2.1.11"
+    "requirejs": "~2.1.11",
+    "requirejs-text": "~2.0.10"
   }
 }
