@@ -26,11 +26,15 @@ require.config({
     sagyChart: {
       deps: ['highcharts']
     }
-  },
-  deps: [
-    './bootstrap'
-  ]
+  }
+  // deps: [
+  //   './bootstrap'
+  // ]
   // priority: [
   //   'jquery'
   // ]
+});
+
+require(['./bootstrap'], function() {
+  console.log('bootstraping...');
 });

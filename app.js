@@ -15,7 +15,7 @@ app.set('view engine', 'html');
 
 
 app.use(express.favicon());
-app.use(express.static(path.join(__dirname, 'develop')));
+app.use(express.static(path.join(__dirname, config.debug ? 'develop' : 'release')));
 app.use(express.logger('dev'));
 
 app.use(express.json());

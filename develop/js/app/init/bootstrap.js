@@ -1,7 +1,7 @@
 define([
   'angular',
   'jquery',
-  'text!/config.json',
+  'text!../../../config.json',
   'jqueryMobile',
   'sagyChart',
   'app',
