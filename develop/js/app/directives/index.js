@@ -1,3 +1,5 @@
-define(['./app-version'], function() {
+define(['./app-version',
+  './widget-about-info'],
+  function() {
 
 });

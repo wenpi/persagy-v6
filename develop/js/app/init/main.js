@@ -36,5 +36,5 @@ require.config({
 });
 
 require(['./bootstrap'], function() {
-  console.log('bootstraping...');
+  console.log('bootstraped...');
 });

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.8, minimum-scale=0.8, maximum-scale=0.8, user-scalable=no" />
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/index.css" >
+    <style type="text/css">
+    </style>
   </head>
   <body>
     <div id="header">
@@ -20,67 +22,100 @@
     </div>
   </div>
   <div class="head_navWrap">
-    <div id="head_Menu" class="head_Menu"></div>
+    <div id="head_Menu" class="head_Menu">
+      <div></div>
+    </div>
     <div  class="navList">
       <div class="nav" id="nav">
         <ul class="nav_option nav_o1">
           <li>
-            <a href="#">
+             <a href="#" onclick="return false;">
             <div class="o_ico o_overviewMessage">
               <span></span>
             </div>
             <div class="o_text">总览信息</div>
             </a>
           </li>
-          <li><a href="#">
+          <li><a href="#" onclick="return false;">
             <div class="o_ico o_map"><span></span></div>
             <div class="o_text">GIS地图</div></a>
           </li>
-          <li><a href="#">
+          <li><a href="#" onclick="return false;">
             <div class="o_ico o_BuildingContrast"><span></span></div>
             <div class="o_text">建筑对比</div></a>
           </li>         
-          <li><a href="#">
+          <li><a href="#" onclick="return false;">
             <div class="o_ico o_management"><span></span></div>
             <div class="o_text">对标管理</div></a>
           </li>
-          <li><a href="#">
+          <li><a href="#" onclick="return false;">
             <div class="o_ico o_PrintIt"><span></span></div>
             <div class="o_text">报表打印</div></a>
           </li>
         </ul>
-        <div class="column">
-          
+        <div class="nav_building">
+          <div class="navBuild_title">          
+            <span class="b_normal "></span>
+            <div class="navBulid_ico"></div>
+            <div class="navBulid_text">万达玉林酒店</div>
+            <b class="b_more b_moreCur"></b>
+          </div>
+          <ul class="nav_option nav_o2">
+            <li>
+              <a href="#" onclick="return false;">
+              <div class="o_ico o_elec"><span></span></div>
+              <div class="o_text">用电管理</div></a>                        
+            </li>
+            <li><a href="#" onclick="return false;">
+              <div class="o_ico o_light"><span></span></div>
+              <div class="o_text">光伏电站</div></a>
+            </li>
+            <li>
+              <a href="#" onclick="return false;">
+              <div class="o_ico o_distribution"><span></span></div>
+              <div class="o_text">配电监控</div></a>
+            </li>
+          </ul>
+
         </div>
-        <ul class="nav_option nav_o2">
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
       </div>
+      
     </div>
-  </div>
+    <div class="BuildingChoose"></div>
+  </div>  
   <div class="py_container">
     <div class="py_content">
-      <table class="py_table" border="0" cellspacing="10" cellpadding="10">
-        <tr  rowspan="1">
-          <td></td>
-          <td></td>
+      <table class="py_table" border="0" cellspacing="15" cellpadding="15">
+        <tr>
+          <td colspan="2" rowspan="1" widget-about-info>
+            <div class="widget_loading"></div>
+          </td>
+          <td colspan="2" rowspan="2">
+            <div class="widget_loading"></div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" rowspan="1"></td>
+          <td colspan="1" rowspan="1"></td>
+        </tr>
+        <tr>
+          <td colspan="2"></td>
           <td colspan="2"></td>
         </tr>
         <tr>
-          <td colspan="2" rowspan="2"></td>
-          <td ></td>
-          <td ></td>
+          <td colspan="4"></td>
         </tr>
-        <tr>
-          <td ></td>
-          <td ></td>
+        <tr style="visibility:collapse">
+          <td style="width:25%;height:0px;"></td>
+          <td style="width:25%;height:0px;"></td>
+          <td style="width:25%;height:0px;"></td>
+          <td style="width:25%;height:0px;"></td>
         </tr>
       </table>
     </div>
     <span app-version></span>
   </div>
     <script data-main="./js/app/init/main" src="./js/lib/requirejs/require.js"></script>
+    <script src="http://127.0.0.1/_/js/reloader.js"></script>
   </body>
 </html>
