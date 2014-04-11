@@ -1,0 +1,142 @@
+/*ÄÜºÄÈÕÀúcss*/
+.widget_energyCalendar_2x1{
+    height: 300px;
+    background: #fff;
+    position:relative;
+}
+.widget_energyCalendar_2x1 .enerCalendBorder {
+    width: 1px;
+    height: 270px;
+    background:url(../../imgs/widgets/energy-calendar/line_top.png) repeat-y;
+    position:absolute;
+    top:28px;
+    left:55%;
+}
+.widget_energyCalendar_2x1 .enerCalendarCont {
+    width: 100%;
+    height: 252px;
+    margin-top:12px;
+}
+.widget_energyCalendar_2x1 .calendarRightcont {
+    width: 45%;
+    height: 252px;
+    float:left;
+}
+.widget_energyCalendar_2x1 .calendarRightcont .calRightTitle {
+    width:100%;
+    height:36px;
+    line-height:24px;
+    font-size:14px;
+    color:#4f4f4f;
+    text-align:center;
+}
+.widget_energyCalendar_2x1 .calendarRightcont .calRightCircle {
+    width:132px;
+    height:132px;
+    margin:0 auto;
+    border-radius:67px;
+    background:#5fbbb6;
+    border: 1px solid #ffffff;
+}
+.widget_energyCalendar_2x1 .calRightCircle .calCircleInside {
+    width:120px;
+    height:120px;
+    margin:6px auto;
+    border-radius:61px;
+    border:1px solid #ffffff;
+    background:#ffffff;
+}
+.widget_energyCalendar_2x1 .calCircleInside h2 {
+    width:100%;
+    height:44px;
+    font-size:14px;
+    color:#808080;
+    text-align:center;
+    line-height:56px;
+}
+.widget_energyCalendar_2x1 .calCircleInside h3 {
+    width:100%;
+    height:40px;
+    font-size:35px;
+    color:#292929;
+    text-align:center;
+    line-height:42px;
+}
+.widget_energyCalendar_2x1 .calCircleInside h4 {
+    width:100%;
+    height:36px;
+    font-size:14px;
+    color:#808080;
+    text-align:center;
+    line-height:24px;
+}
+.widget_energyCalendar_2x1 .calendarRightcont .calRightBottomCont {
+    width:100%;
+    height:82px;
+}
+.widget_energyCalendar_2x1 .calRightBottomCont .BottomEveryenergy {
+    width:50%;
+    height:82px;
+    float:left;
+}
+.widget_energyCalendar_2x1 .BottomEveryenergy h2 {
+    width:100%;
+    height:28px;
+    line-height:32px;
+    color:#808080;
+    font-size:12px;
+    text-align:center;
+}
+.widget_energyCalendar_2x1 .BottomEveryenergy h3 {
+    width:100%;
+    height:20px;
+    line-height:12px;
+    color:#808080;
+    font-size:12px;
+    text-align:center;
+}
+.widget_energyCalendar_2x1 .BottomEveryenergy h4 {
+    width:100%;
+    height:34px;
+    line-height:28px;
+    color:#4f4f4f;
+    font-size:24px;
+    text-align:center;
+}
+.widget_energyCalendar_2x1 .calendarshow {
+    width: 55%;
+    height: 252px;
+    float:left;
+}
+.widget_energyCalendar_2x1 .calendarshow .calendar_jcal {
+    width:100%;
+    height:228px;
+    position:relative;
+}
+.widget_energyCalendar_2x1 .calendarshow .calendshowBottom {
+    width:280px;
+    margin:0 auto;
+    height:24px;
+    font-size:12px;
+    color:#959595;
+    /*text-align:center;*/
+    line-height:18px;
+}
+.widget_energyCalendar_2x1 .calendargreenCirc,.calendarredCircle,.calendarblueCircle{
+width:8px;
+height:8px;
+border-radius:4px;
+display:inline-block;
+margin-right:6px;
+}
+.widget_energyCalendar_2x1 .calendargreenCirc {
+    background:#5fbbb6;
+}
+.widget_energyCalendar_2x1 .calendarredCircle {
+    background:#f09a61;
+    margin-left:14px;
+}
+.widget_energyCalendar_2x1 .calendarblueCircle {
+    background:#91c7df;
+    margin-left:14px;
+}

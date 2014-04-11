@@ -1,0 +1,59 @@
+/*24小时功率实时监控css*/
+.widget_monitoring_1x2 {
+    height: 300px;
+}
+
+    .widget_monitoring_1x2 .power_aware_con {
+        position: relative;
+        width: 100%;
+        height: 260px;
+    }
+    .widget_monitoring_1x2 .power_aware_con .powered{
+      position:absolute;
+      right:32px;
+      top:-22px;
+      font-size:12px;
+      color:#808080;
+    }
+        .widget_monitoring_1x2 .power_aware_con .powerdd {
+        font-size:12px;
+        color:#808080;
+        }
+    .widget_monitoring_1x2 h1 span:last-child {
+        color: #808080;
+        font-size: 12px;
+        margin-left: 15px;
+        
+    }
+
+    .widget_monitoring_1x2 .con_chart {
+    }
+
+    .widget_monitoring_1x2 .con_bottom {
+        position: absolute;
+        bottom: 0;
+        width:94%;
+    }
+
+        .widget_monitoring_1x2 .con_bottom > div {
+            width: 50%;
+            float: left;
+            line-height: 30px;
+            font-size: 12px;
+            color: #808080;
+            /*margin-left: 18%;*/
+            text-align: center;
+        }
+
+            .widget_monitoring_1x2 .con_bottom > div span {
+                font-size: 24px;
+                color: #4f4f4f;
+            }
+
+                .widget_monitoring_1x2 .con_bottom > div span.unit {
+                    font-size: 12px;
+                    color: #808080;
+                }
+.widget_monitoring_1x2  .sagy_chart {
+    width:100%;
+}

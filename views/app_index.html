@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title><%= locals.app_info.name %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=0.8, minimum-scale=0.8, maximum-scale=0.8, user-scalable=no" />
+  <link rel="stylesheet" href="../styles/reset.css">
+  <link rel="stylesheet" href="../styles/index.css">
+  <style type="text/css"></style>
+</head>
+<body>
+  <div id="hrefTopA"></div>
+  <div id="header">
+    <div id="head_right">
+      <ul>
+        <li class="h_Exit">
+          <a href="/signout">注销</a>
+        </li>
+        <li class="h_Manage"><%= locals.user_name %></li>
+        <li class="h_CallPolice">8</li>
+      </ul>
+    </div>
+    <div class="CallPolice_tips" ng-controller="alarmCtrl">
+      <div class="triangle"></div>
+      <div class="con">
+        <div class="con_title">
+          <span class="pic1"></span>
+          报警信息
+        </div>
+        <div class="content">
+            <ul>
+                <li ng-repeat="alarm in alarms"><span>{{alarm.alarmData}}</span><span>{{alarm.alarmDate}}</span><span></span><span><em>{{alarm.alarmType}}</em></span></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <input type="hidden" id="user_info" value="<%= locals.user_info_str %>">
+    <div id="head_title">
+    <!-- style="background-image: url(imgs/nav/title_logo.png);" -->
+      <span><%= locals.app_info.name %></span>
+    </div>
+  </div>
+  <div class="head_navWrap" id="head_navWrap" ng-controller="navCtrl">
+    <div id="head_Menu" class="head_Menu">
+      <div></div>
+    </div>
+    <div class="navList">
+      <div class="nav" id="nav">
+        <ul class="nav_option nav_o1">
+          <% for(var i=0; i<function_list.length; i++) { %>
+          <li>
+            <a href="./<%= function_list[i].id %><% if(locals.is_single){ %>?id=<%= locals.body_sign %><% } %>" target="_blank" >
+              <div class="o_ico o_<%= function_list[i].id %>">
+                <span></span>
+              </div>
+              <div class="o_text">
+                <%= function_list[i].name %></div>
+            </a>
+          </li>
+          <% } %>
+        </ul>
+        <% if(!locals.is_single){ %>
+        <div class="nav_building">
+          <div class="navBuild_title">
+            <span class="b_normal "></span>
+            <div class="navBulid_ico"></div>
+            <a ng-href="./{{selectedBuilding.sign}}" target="_blank">
+              <div class="navBulid_text">{{selectedBuilding.name}}</div>
+            </a> <b class="b_more /*b_moreCur*/"></b>
+          </div>
+          <ul class="nav_option nav_o2" style="display:none;">
+            <li ng-repeat="func in selectedBuilding.funcList ">
+              <a ng-href="./{{func.id}}?id={{selectedBuilding.sign}}" target="_blank">
+                <div class="o_ico o_{{func.id}}">
+                  <span></span>
+                </div>
+                <div class="o_text">{{func.name}}</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <% } %>
+      </div>
+    </div>
+    <!--建筑more-->
+    <div class="BuildingChoose" style="">
+      <div class="buildC_head">
+        <div class="buildC_select">
+          <span class="C_selectText">按默认排序</span>
+          <span class="s_down_bar /*s_down_barCur*/"></span>
+          <ul id="build_name">
+            <li ng-repeat="item in typeList" ng-click="selectType(item)">{{item.name}}</li>
+          </ul>
+        </div>
+        <div class="buildC_headSearch">
+          <label for="build_search" class="b_search_ico"></label>
+          <input type="text" id="build_search" class="build_search" ng-model="budingQuery" />
+        </div>
+        <h3>建筑选择</h3>
+      </div>
+      <div class="buildC_body">
+        <div class="nav_build_Dwrap">
+          <div class="n_buildOption" ng-repeat="item in types">
+            <div class="option_head">
+              <div class="b_optionName" ng-click="showBuildingList($event)">
+                <div class="o_arr"></div> <b>{{item.name}}</b>
+                &nbsp;(&nbsp;
+                <span>{{item.count}}</span>
+                &nbsp;)
+              </div>
+              <div class="b_optionLine"></div>
+            </div>
+            <div class="n_option_main">
+              <ul class="build_Tname">
+                <li  ng-repeat="building in buildings" ng-click="selectBuilding(building)" ng-show="isShowBuilding(building,$parent.$index)">{{building.name}}</li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+        <div class="nav_build_Dwrap_search">
+          <div class="n_buildOption">
+            <div class="n_option_main">
+              <ul class="build_Tname">
+                <li  ng-repeat="building in buildings | filter: budingQuery" ng-click="selectBuilding(building)" >{{building.name}}</li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="choose_arrow"></div>
+    </div>
+  </div>
+  <div class="py_container">
+    <div class="app_py_content">
+    <iframe id="iframe" style="width: 100%; overflow:hidden;" id="iframe" scrolling="no"></iframe>
+    <input type="hidden" id="iframe_src" value="<%= locals.app_info.url %>?userId=<%= locals.user_id %><% if(locals.building_sign){ %>&bodySign=<%= locals.building_sign %><% } %>">
+    <script type="text/javascript">
+      var winHeight = document.documentElement.clientHeight - 70;
+      document.getElementById("iframe").style.height = winHeight + "px";
+      function setIframeSrc() {
+        var s = document.getElementById('iframe_src').value;
+        var iframe = document.getElementById('iframe');
+        iframe.src = s;
+      }
+      setTimeout(setIframeSrc, 5);
+    </script>
+    </div>
+  </div>
+     <a href="#hrefTopA" id="hrefTop"></a>
+  <script data-main="../js/app/init/main" src="../js/lib/requirejs/require.js"></script>
+</body>
+</html>

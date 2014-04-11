@@ -1,0 +1,238 @@
+﻿.tipArrow {
+    border-color: transparent #DDD transparent transparent;
+    border-style: solid;
+    border-width: 0px 61px 61px 0px;
+    width: 0;
+    height: 0;
+}
+
+/* default dimensions and justification for each month including title */
+.jCal {
+    /* each day width + border-left + border-right */
+    width: 114px;
+    height: 20px;
+    text-align: center;
+    vertical-align: top;
+    /*background-image: url(wyf_Alarm-dateheader_bg.png);*/
+    position: absolute;
+    top: -28px;
+    left: 90px;
+}
+/* default dimensions and justification for each month not including title */
+.jCalMo {
+    /*-webkit-box-shadow: 0 0 14px 4px #ccc;*/
+    /*box-sizing: border-box;*/
+    width: 280px; /* each day width + border-left + border-right */
+    /*float:left;*/
+    overflow: visible;
+    /*height:100%;*/
+    white-space: nowrap;
+    position: relative;
+    margin:0px auto;
+    /*position: absolute;*/
+    /*border-left: 1px solid #ccc;*/
+    top: 30px;
+    /*left:36px;*/
+}
+/* top month display block - i.e. January */
+.jCal .month, .jCal .monthSelect, .jCal .monthName, .jCal .monthYear {
+    line-height: 20px;
+    width: 94px;
+    height: 20px;
+    text-align: center;
+    vertical-align: bottom;
+    font-size: 8pt;
+    color: #292929;
+}
+
+.jCal .month {
+float:left;
+}
+/* month name per calendar style - includes left/right padding and alignment */
+.jCal .monthName {
+    color: #4f4f4f;
+    font-size: 14px;
+    width: 80px;
+    text-align: center;
+}
+/* year per calendar style - includes left/right padding and alignment */
+.jCal .monthYear {
+    color: #4f4f4f;
+    font-size: 14px;
+    text-align: center;
+    width: 100px;
+}
+/* hilight style for new month combobox pulldown for hover */
+.jCal .monthSelect {
+    background: #EEE url(eeGrad2.gif) bottom repeat-x;
+}
+/* do not edit - this enables the new month combobox selector */
+.jCal .monthSelector {
+    position: absolute;
+}
+/* do not edit - this enables the new month combobox selector "shadow" for capturing auto-hide */
+.jCal .monthSelectorShadow {
+    position: absolute;
+    background: #808080;
+    padding: 0px;
+}
+/* this is the hover for the month name */
+.jCal .monthNameHover {
+    background: #EDEDED url(double-arrow-vert.gif) center left no-repeat;
+    color: #808080;
+}
+/* this is the hover for the year */
+.jCal .monthYearHover {
+    background: #EDEDED url(double-arrow-vert.gif) center right no-repeat;
+    color: #808080;
+}
+/* this is the hover for the new month or year hover in the new combobox selection */
+.jCal .monthSelectHover {
+    background: #069;
+    color: #FFF;
+}
+/* day block dimensions and style - for all day blocks  单元格宽度*/
+.day, .jCalMo .pday, .jCalMo .aday, .jCalMo .overDay, .jCalMo .invday {
+    width: 22px;
+    margin-right:18px;
+    border-radius:13px;
+    height: 22px;
+    font-size: 12px;
+    line-height: 22px;
+    margin-top:4px;
+    color:#666666;
+    /*border-right: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    -webkit-box-shadow:1px 1px 1px rgba(255,255,255,1) inset;*/
+    text-align: center;
+    cursor: default;
+    float: left;
+}
+
+/* day of week header specific style */
+.jCalMo .dow {
+    width: 22px;
+    height: 22px;
+    margin-top:4px;
+    margin-right:18px;
+    font-size: 22px;
+    line-height: 22px;
+    color: #006c64;
+    /*border-right: 1px solid #CCC;*/
+    text-align: center;
+    cursor: default;
+    float: left;
+    /*background-color: #EFEFEF;*/
+    font-size: 12px;
+    box-sizing: border-box;
+}
+/* actual calendar day default style */
+.jCalMo .day, .jCalMo .invday {
+    height: 22px;
+    margin-top:4px;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 22px;
+}
+/* selectable calendar day specific style */
+.higherDay {
+    background-color:#f09a61;
+    color:#ffffff;
+}
+.lowerDay {
+    background-color:#5fbbb6;
+    color:#ffffff;
+}
+.equalDay {
+    background-color:#91c7df;
+    color:#ffffff;
+}
+[class*='day'][class*='selectedDay']{
+box-shadow: 0px 0px 0px 2px #a8a8a8 inset;
+-webkit-box-shadow: 0px 0px 0px 2px #a8a8a8 inset;
+}
+[class*='higherDay'][class*='selectedDay'] {
+box-shadow: 0px 0px 0px 2px #f09a61 inset;
+-webkit-box-shadow: 0px 0px 0px 2px #f09a61 inset;
+}
+[class*='lowerDay'][class*='selectedDay'] {
+box-shadow: 0px 0px 0px 2px #5fbbb6 inset;
+-webkit-box-shadow: 0px 0px 0px 2px #5fbbb6 inset;
+}
+[class*='equalDay'][class*='selectedDay']{
+box-shadow: 0px 0px 0px 2px #91c7df inset;
+-webkit-box-shadow: 0px 0px 0px 2px #91c7df inset;
+}
+
+.jCalMo .day {
+    cursor: pointer;
+    border-radius:13px;
+}
+/* blacked-out calendar day specific style */
+.jCalMo .invday {
+    color: #808080;
+    background: #eeeeee;
+    text-decoration: line-through;
+}
+/* 27 28 29 高度 */
+.jCalMo .pday, .jCalMo .aday {
+    height: 22px;
+    margin-top:4px;
+    background: none;
+    color: #aaaaaa;
+    box-sizing: border-box;
+    line-height:22px;
+}
+/* selected day */
+.jCalMo .selectedDay {
+    color: #666666;
+    background:#ffffff;
+    /* must use rgb() syntax for jquery.color.js compliance */
+    /*background-image:url(../Images/CalendarImages/wyf_Alarm-datePekerselected.png);*/
+}
+/* mouseover hilighted selectable day |hover */
+.jCalMo .overDay {
+    color: #4D4D4D;
+    /*background-image:url(../Images/CalendarImages/wyf_Alarm-datePekerselected.png);*/
+    /*opacity:0.6;*/
+}
+/* left month navigation button - no need to change */
+.jCal .left {
+    width: 10px;
+    height: 20px;
+    /*margin: 30px auto;*/
+    float:left;
+    vertical-align: middle;
+    cursor: pointer;
+    background:url(../../imgs/widgets/energy-calendar/jCal_icon_left.png) no-repeat center center;
+}
+
+.jCal .left:hover {  
+    /*opacity:0.6;*/ 
+    background:url(../../imgs/widgets/energy-calendar/jCal_icon_left_hover.png) no-repeat center center;
+}
+/* right month navigation button - no need to change */
+.jCal .right {
+    width: 10px;
+    height: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); 
+    -ms-transform: rotate(180deg);
+    float:left;
+    background:url(../../imgs/widgets/energy-calendar/jCal_icon_left.png) no-repeat center center;
+}
+.jCal .right:hover {    
+     background:url(../../imgs/widgets/energy-calendar/jCal_icon_left_hover.png) no-repeat center center;
+}
+ /*no need to change - this is for carousel opacity*/ 
+.jCalMask, .jCalMove {
+    position: absolute;
+    overflow: hidden;
+}
+
+/**day 报警状态  YY**/
+.jCal .day_status {
+    background: url(alarm_datepick_icon_yy.png) no-repeat right top;
+}

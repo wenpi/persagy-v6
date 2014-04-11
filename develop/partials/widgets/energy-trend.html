@@ -1,0 +1,81 @@
+<div class="widget_energyTrend_2x2 widget">
+    <div class="energyTrendHeader">
+        <div class="widget_name">
+            <em></em><span class="na">{{title}}</span>
+            <span>{{subtitle}}</span>
+        </div>
+        <div class="trendTitleSign">
+            <ul>
+                <li ng-click="costOrEnergy(1)">能耗</li>
+                <li ng-click="costOrEnergy(0)">费用</li>
+            </ul>
+            <span></span>
+        </div>
+    </div>
+    <div class="energyTrendListCont">
+        <div class="trendListLeft">
+            <div class="energySelectDiv">
+                <span class="trendListArrowSpan"></span>
+                <select class="energySelect" ng-model="selectedEnergy" ng-options="item.energyTypeName for item in energyTypes"></select>
+            </div>
+            <div class="timeSelectDiv">
+                <span class="trendListArrowSpan"></span>
+                <select class="timeSelect" ng-model="selectedTime" ng-options="item.timeTypeName for item in timeTypes"></select>
+            </div>
+        </div>
+        <div class="trendListright">
+            <div>
+                <span>单位：</span>
+                <span style="margin-right: 36px;">{{baseUnit}}</span>
+            </div>
+            <div ng-show="selectedTime.timeTypeId!=6">
+                <span class="trendRedBlock" style="background-color:{{current_color}}"></span>
+                <span>本{{selectedTime.timeTypeName}}</span>
+                <span class="trendGrayBlock"></span>
+                <span>{{selectedTime.timeText}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="energyTrendChart sagy_chart" id="energyTrendChart"></div>
+    <div class="energyTrendBottom">
+        <div class="trendBottomTotal">
+            <div class="trendBottomTitle">
+                <span class="trendBottomtPic"></span>
+                <span style="vertical-align:middle;">当{{selectedTime.timeTypeName}}能耗</span>
+            </div>
+            <div class="trendElecvalue">
+                <span class="trendenergyValue">{{curEnergy}}</span>
+                <span class="trendBottomUnit" style="font-size: 16px;">{{curEnergyUnit}}</span>
+            </div>
+            <div class="trendBottomBorder"></div>
+        </div>
+        <div class="trendBottomCompare" ng-show="selectedTime.timeTypeId!=6">
+            <div class="trendBottomTitle">
+                <span class="BottomComparePic"></span>
+                <span style="vertical-align:middle;">同期比较</span>
+            </div>
+            <div class="trendComparevalue">
+                <div class="compareLeft">
+                    <span class="compLeftArrow" ng-class="upOrDownC"></span>
+                    <span class="trendUpPercent">{{highProbe | number:2}}</span>
+                    <span class="trendcomPerc">%</span>
+                </div>
+                <div class="compareRight">
+                    相比{{selectedTime.timeText}}同期能耗{{upOrDownT}}了
+                    <span class="trendUpValue">{{highEnergy}}</span>
+                    <span class="trendBottomUnit">{{highEnergyUnit}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="trendBottomTotal" ng-show="selectedTime.timeTypeId==6">
+            <div class="trendBottomTitle">
+                <span class="trendBottomtPic"></span>
+                <span>历年能耗最大值</span>
+            </div>
+            <div class="trendElecvalue">
+                <span class="trendenergyValue">{{highEnergy}}</span>
+                <span class="trendBottomUnit" style="font-size: 16px;">{{highEnergyUnit}}</span>
+            </div>
+        </div>
+    </div>
+</div>

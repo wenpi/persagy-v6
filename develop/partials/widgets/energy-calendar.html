@@ -1,0 +1,47 @@
+<div class="widget_energyCalendar_2x1 widget">
+    <div class="enerCalendBorder"></div>
+    <div class="widget_name">
+        <em></em><span class="na">{{title}}</span>
+        <span>{{subtitle}}</span>
+    </div>
+    <div class="enerCalendarCont">
+        <!--日历-->
+        <div class="calendarshow">
+            <div class="calendar_jcal"></div>
+            <div class="calendshowBottom">
+                <span class="calendargreenCirc"></span>
+                <span>能耗下降</span>
+                <span class="calendarredCircle"></span>
+                <span>能耗上升</span>
+                <span class="calendarblueCircle"></span>
+                <span>能耗持平</span>
+            </div>
+        </div>
+        <div class="calendarRightcont">
+            <div class="calRightTitle">{{curDay}}</div>
+            <div class="calRightCircle">
+                <div class="calCircleInside">
+                    <h2>今日能耗</h2>
+                    <h3>{{curEnergy}}</h3>
+                    <h4>{{unit}}</h4>
+                </div>
+            </div>
+            <div class="calRightBottomCont">
+                <div class="BottomEveryenergy">
+                    <h2>上月工作日</h2>
+                    <h3>平均能耗</h3>
+                    <h4>{{prevWorkDay}}
+                        <span style="font-size: 12px;">{{unit}}</span>
+                    </h4>
+                </div>
+                <div class="BottomEveryenergy">
+                    <h2>上月非工作日</h2>
+                    <h3>平均能耗</h3>
+                    <h4>{{prevNotWorkDay}}
+                        <span style="font-size: 12px;">{{unit}}</span>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

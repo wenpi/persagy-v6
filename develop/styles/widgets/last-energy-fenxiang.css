@@ -1,0 +1,59 @@
+.widget_LastEnergyPercent_2x1{
+    width: 568px;
+    height: 268px;
+    border: 1px solid #666;
+    background: #fff;
+    position: relative;
+    padding: 10px 10px 10px 0px;
+}
+   .widget_LastEnergyPercent_2x1 .eneContent {
+        margin-top: 15px;
+        padding: 15px;
+        height: 200px;
+        overflow: hidden;
+    }
+       .widget_LastEnergyPercent_2x1 .eneContent .eneContentleft {
+            border:1px solid #727272;
+            float: left;
+            width: 30%;
+            height: 150px;
+            padding: 10px;
+            margin-right: 12px;
+        }
+
+       .widget_LastEnergyPercent_2x1 .eneContent .eneContentright {
+            font-size: 16px;
+            height: 190px;
+            width: 300px;
+            float: left;
+            margin-left: 30px;
+            margin-top: 20px;
+        }
+
+            .widget_LastEnergyPercent_2x1 .eneContent .eneContentright .spe {
+                width: 140px;
+                height: 41px;
+                float: left;
+                overflow: hidden;
+                margin-bottom: 30px;
+            }
+
+            .widget_LastEnergyPercent_2x1 .eneContent .eneContentright .speel {
+                width: 5px;
+                height: 35px;
+                background: #f29961;
+                float: left;
+                margin-right: 18px;
+                position: relative;
+                top: 5px;
+            }
+
+            .widget_LastEnergyPercent_2x1 .eneContent .eneContentright .spe1 {
+                float: left;
+            }
+
+            .widget_LastEnergyPercent_2x1 .eneContent .eneContentright p {
+                font-size: 18px;
+                color: #595959;
+                margin-bottom: 8px;
+            }

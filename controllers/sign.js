@@ -5,12 +5,6 @@ var config = require('../config').config;
 
 var User = require('../managers/user');
 
-/**
- * Show user login page.
- *
- * @param  {HttpRequest} req
- * @param  {HttpResponse} res
- */
 exports.showSignin = function(req, res) {
   if (res.locals.current_user) {
     res.render('index', {
@@ -22,13 +16,6 @@ exports.showSignin = function(req, res) {
   }
 };
 
-/**
- * Handle user login.
- *
- * @param {HttpRequest} req
- * @param {HttpResponse} res
- * @param {Function} next
- */
 exports.signin = function(req, res, next) {
   var user_id = validator.trim(sanitize(req.body.id));
   var password = validator.trim(sanitize(req.body.password));
@@ -40,29 +27,24 @@ exports.signin = function(req, res, next) {
     });
   }
 
-  User.getUserByName(user_id, function(err, user) {
+  User.getUserByName(user_id, password, function(err, _info) {
+    var info = _info;
     if (err) {
       return next(err);
     }
-    if (!user) {
+    if (!info) {
       return res.render('signin', {
-        error: '这个用户不存在。'
+        error: '用户名或密码不正确'
       });
     }
-    // password = md5(password);
-    if (password !== user.password) {
-      return res.render('signin', {
-        error: '密码错误。'
-      });
-    }
-    // store session cookie
-    gen_session(user, remember, req, res);
-    //todo cookie
-    // console.dir(req.headers);
-    // if (remember) {
-    //   req.session.cookie.expires = false;
-    //   req.session.cookie.maxAge = false;
-    // }
+    var user = {
+      id: user_id,
+      name: info.userName,
+      password: password,
+      bodySign: info.bodySign,
+      isSingle: info.isSingle
+    };
+    gen_session(user, info.functionList, remember, req, res);
     res.redirect('/');
   });
 };
@@ -76,24 +58,33 @@ exports.signout = function(req, res) {
   res.redirect('/');
 };
 
-
-// auth_user middleware
 exports.auth_user = function(req, res, next) {
   var cookie;
-  if (req.session.user) {
+  if (req.session.user && req.session.function_list) {
     res.locals.current_user = req.session.user;
+    res.locals.function_list = req.session.function_list;
     next();
   } else if (cookie = req.cookies[config.auth_cookie_name]) {
     var auth_token = decrypt(cookie, config.session_secret);
     var auth = auth_token.split('\t');
     var user_id = auth[0];
-    User.getUserByName(user_id, function(err, user) {
+    var user_psd = auth[2];
+    User.getUserByName(user_id, user_psd, function(err, _info) {
+      var info = _info;
+      var user;
       if (err) {
         next(err);
       }
-      if (user) {
-        req.session.user = user;
-        res.locals.current_user = req.session.user;
+      if (info) {
+        user = {
+          id: user_id,
+          name: info.userName,
+          password: user_psd,
+          bodySign: info.bodySign,
+          isSingle: info.isSingle
+        };
+        res.locals.current_user = req.session.user = user;
+        res.locals.function_list = req.session.function_list = info.functionList;
       }
       next();
     });
@@ -102,17 +93,22 @@ exports.auth_user = function(req, res, next) {
   }
 };
 
-// private
-function gen_session(user, remember, req, res) {
-  var auth_token = encrypt(user.id + '\t' + user.name + '\t' + user.password + '\t' + user.email, config.session_secret);
+function gen_session(user, functionList, remember, req, res) {
+  var auth_token = encrypt(
+    user.id + '\t' +
+    user.name + '\t' +
+    user.password + '\t' +
+    user.bodySign + '\t' +
+    user.isSingle + '\t' +
+    user.functionList, config.session_secret);
   if (remember) {
     res.cookie(config.auth_cookie_name, auth_token, {
       path: '/',
       maxAge: 1000 * 60 * 60 * 24 * 30
     }); //cookie 有效期30天
   }
-  req.session.user = user;
-  res.locals.current_user = req.session.user;
+  res.locals.current_user = req.session.user = user;
+  res.locals.function_list = req.session.function_list = functionList;
 }
 
 function encrypt(str, secret) {

@@ -1,0 +1,98 @@
+/*节能改造*/
+.widget_EnergyConserReform_1x1 {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+}
+
+    .widget_EnergyConserReform_1x1 .wigetMain {
+        float: left;
+        width: 1022px;
+        position: absolute;
+        top: 35px;
+    }
+
+        .widget_EnergyConserReform_1x1 .wigetMain .wigetUl {
+            height: 306px;
+            background: #ffffff;
+            position: relative;
+            float: left;
+            width: 305px;
+        }
+
+            .widget_EnergyConserReform_1x1 .wigetMain .wigetUl h2 {
+                font-size: 14px;
+                color: #4f4f4f;
+                width: 100%;
+                height: 28px;
+                line-height: 28px;
+                text-indent: 32px;
+                margin-top: 30px;
+            }
+
+            .widget_EnergyConserReform_1x1 .wigetMain .wigetUl h3 {
+                font-size: 14px;
+                color: #4f4f4f;
+                width: 100%;
+                height: 38px;
+                line-height: 44px;
+                text-indent: 32px;
+            }
+
+            .widget_EnergyConserReform_1x1 .wigetMain .wigetUl h4 {
+                font-size: 14px;
+                color: #4f4f4f;
+                width: 100%;
+                height: 40px;
+                line-height: 48px;
+                text-indent: 32px;
+            }
+
+            .widget_EnergyConserReform_1x1 .wigetMain .wigetUl h5 {
+                font-size: 14px;
+                color: #4f4f4f;
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                text-indent: 32px;
+            }
+
+    .widget_EnergyConserReform_1x1 .energyConserSwitch {
+        position: absolute;
+        right: 32px;
+        bottom: 45px;
+        height: 16px;
+        width: 72px;
+    }
+
+        .widget_EnergyConserReform_1x1 .energyConserSwitch span {
+            display: block;
+            float: left;
+            height: 16px;
+            width: 10px;
+            cursor: pointer;
+        }
+
+        .widget_EnergyConserReform_1x1 .energyConserSwitch .switchSign {
+            width: 37px;
+            padding-left: 15px;
+            text-align: center;
+            color: #4f4f4f;
+            font-size: 14px;
+            line-height: 16px;
+        }
+
+        .widget_EnergyConserReform_1x1 .energyConserSwitch .enerSwitchLeft {
+            background: url(../../imgs/widgets/energy-saving-display/enerSwitchLeft-normal.png) no-repeat center center;
+        }
+
+            .widget_EnergyConserReform_1x1 .energyConserSwitch .enerSwitchLeft:hover {
+                background: url(../../imgs/widgets/energy-saving-display/enerSwitchLeft-hover.png) no-repeat center center;
+            }
+
+        .widget_EnergyConserReform_1x1 .energyConserSwitch .enerSwitchRight {
+            background: url(../../imgs/widgets/energy-saving-display/enerSwitchRight-normal.png) no-repeat center center;
+        }
+             .widget_EnergyConserReform_1x1 .energyConserSwitch .enerSwitchRight:hover {
+            background: url(../../imgs/widgets/energy-saving-display/enerSwitchRight-hover.png) no-repeat center center;
+        }

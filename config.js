@@ -12,5 +12,7 @@ exports.config = {
   session_secret: 'persagy-v6',
   cookie_secret: 'persagy-v6',
   auth_cookie_name: 'sagy-user',
-  port: 3000
+  port: 3000,
+  serviceUrlNew: 'http://192.168.100.22:6666/EMS_Service_V/rest/ServiceView/qureyArrayStr/',
+  serviceUrl: 'http://192.168.100.199:8888/EMS_Service_V/rest/ems/json/'
 };

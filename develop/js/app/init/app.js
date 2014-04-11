@@ -1,10 +1,10 @@
 define([
   'angular',
   'uiRouter',
+  '../services/index',
   '../controllers/index',
   '../directives/index',
-  '../filters/index',
-  '../services/index'
+  '../filters/index'
 ], function(ng) {
   'use strict';
 

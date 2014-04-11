@@ -1,0 +1,53 @@
+/*节能统计*/
+.widget_EnergyConserCount_1x1  {
+    height:300px;
+    background:#ffffff;
+}
+.widget_EnergyConserCount_1x1 h2{
+    width:100%;
+    height:30px;
+    font-size:18px;
+    line-height:30px;
+    text-align:center;
+    color:#4f4f4f;
+    margin-top:30px;
+}
+.widget_EnergyConserCount_1x1 h5{
+    width:100%;
+    height:26px;
+    font-size:12px;
+    line-height:26px;
+    text-align:center;
+    color:#808080;
+}
+.widget_EnergyConserCount_1x1 h3{
+    width:100%;
+    height:90px;
+    font-size:48px;
+    line-height:80px;
+    text-align:center;
+    color:#4f4f4f;
+}
+.widget_EnergyConserCount_1x1 h4{
+    width:162px;
+    height:28px;
+    font-size:14px;
+    line-height:28px;
+    text-align:center;
+    color:#4f4f4f;
+    margin:0px auto;
+    border-radius:13px;
+    background:#eeeeee;
+}
+.widget_EnergyConserCount_1x1 h4 .conserValue {
+    font-size: 24px;
+    vertical-align: middle;
+    }
+.widget_EnergyConserCount_1x1 h4 .conserPercent {
+    font-size: 18px;
+    vertical-align: middle;
+    }
+    .widget_EnergyConserCount_1x1 h3 .cvalueUnit {
+        font-size:16px;
+        margin-left:3px;
+    }

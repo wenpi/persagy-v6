@@ -1,3 +1,3 @@
-define(['./module'], function(controllers) {
+define(['./main-ctrl', './alarm-ctrl', './nav-ctrl'], function() {
 
 });

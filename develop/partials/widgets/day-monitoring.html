@@ -1,0 +1,26 @@
+﻿<!-- 24小时功率实时监控  -->
+<div class="widget_monitoring_1x2 widget">
+    <div class="widget_name">
+        <em></em><span class="na">{{title}}</span>
+        <span>{{subtitle}}</span>
+    </div>
+    <div class="power_aware_con">
+        <div class="powered"><span>单位: </span><span class="powerdd">{{unit}}</span></div>
+        <div id="power_aware_chart" class="sagy_chart"></div>
+        <div class="con_bottom">
+            <div class="nowpower">
+                <div>当前功率</div>
+                <span>{{curPower}}</span>
+                <span class="unit">{{curPowerUnit}}</span>
+            </div>
+            <div class="maxpower">
+                <div>
+                    峰值功率(发生于 <em>{{maxPowerTime}}</em>
+                    )
+                </div>
+                <span>{{maxPower}}</span>
+                <span class="unit">{{maxPowerUnit}}</span>
+            </div>
+        </div>
+    </div>
+</div>

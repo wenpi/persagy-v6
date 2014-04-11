@@ -1,0 +1,210 @@
+﻿  
+    <div class="widget_LastEnergyTrend_2x1 widget">
+        <div class="widget_name">
+            <em></em><span class="na">{{title}}</span>
+            <span>{{subtitle}}</span>
+        </div>
+        <div class="temContent">
+            <div class="temContenttop">
+                <div class="temContentl">
+                    <ul id="temCombox">
+                        <li class="selected">室内</li>
+                        <li style="border-right: 1px solid #d4d4d4;">室外</li>
+                    </ul>
+                </div>
+                <div class="temContentr">
+                    <ul id="temCommenu">
+                        <li>日</li>
+                        <li class="selected">周</li>
+                        <li style="border-right: 1px solid #d4d4d4;">月</li>
+                    </ul>
+                </div>
+                <div class="temContentzhi">
+                    <ul>
+                        <li><span class="tp" style="background-image: url(../../imgs/widgets/last-energy-trend/energy-red.jpg);"></span>最高值</li>
+                        <li><span class="tp" style="background-image: url(../../imgs/widgets/last-energy-trend/energy-qian.jpg);"></span>最低值</li>
+                        <li><span class="tp" style="background-image: url(../../imgs/widgets/last-energy-trend/energy-blue.jpg);"></span>平均值</li>
+                    </ul>
+                </div>
+              
+            </div>
+        
+           <div class="temContentbottom" id="temContentChart">
+           </div>
+     </div>
+    </div>
+<script>
+    var sc_chart;
+    $(function () {
+        $('#temCombox').on('click', function (e) {
+            e.stopPropagation();
+            var that = e.target;
+            if (that.tagName == "LI") {
+                $(that).addClass("selected")
+                .siblings().removeClass("selected");
+            }
+        });
+        $('#temCommenu').on('click', function (e) {
+            e.stopPropagation();
+            var that = e.target;
+            if (that.tagName == "LI") {
+                $(that).addClass("selected")
+                 .siblings().removeClass("selected");
+            }
+        });
+        $(".temContentzhi .tp").on("click", function () {
+            var temFlag = $(this).hasClass('temSelected');
+            temFlag ? $(this).removeClass('temSelected') : $(this).addClass('temSelected');
+        });
+        creatChart();
+        var chartData = { xData: [3.22, 3.24, 3.26, 3.28, 3.30, 3.32, 3.34], yData: [5, 7, -5, -10, 8, 9, -2] };
+        var chartData1 = { xData: [3.22, 3.24, 3.26, 3.28, 3.30, 3.32, 3.34], yData: [1, 2, -7, -15, 3, 2, -4] };
+        var chartData2 = { xData: [3.22, 3.24, 3.26, 3.28, 3.30, 3.32, 3.34], yData: [2, 3, -6, -12.5, 5.5, 5.5, -3] };
+        sc_chart.setData(chartData, 0);
+        sc_chart.setData(chartData1, 1);
+        sc_chart.setData(chartData2, 2);
+    });
+    function creatChart() {
+        sc_chart = sagyChart({
+            chartOption: {
+                chart: {
+                    backgroundColor: "rgba(255,0,0,0)",
+                    type: 'line',
+                    // spacingBottom: 20,
+                    marginRight: 10,
+                    marginLeft: 30,
+                    // spacingLeft: 0,
+                    marginBottom: 40,
+                    plotBorderWidth: 0,
+                    plotBackgroundColor: "#fffff9",
+                    height: 180,
+                    width: 550
+                },
+
+
+                legend: {
+                    enabled: false
+                },
+                credits: {
+                    enabled: false,
+                },
+                plotOptions: {
+                    series: {
+                        turboThreshold: 200000,
+                        stickyTracking: false,
+                        states: {
+                            hover: {
+                                enabled: false
+                            }
+                        },
+                        pointPadding: -0.2,
+                        borderWidth: 0,
+                        groupPadding: 0.2,
+                        // pointPlacement: "on",
+                        shadow: false
+                    }
+                },
+                tooltip: {
+                    enabled: true,
+                    animation: false,
+                    backgroundColor: null,
+                    borderWidth: 0,
+                    shadow: false,
+                    formatter: function () {
+                        return '<span>' + this.y + '</span><br/><span>' + this.x + '</span>';
+                    },
+                },
+                title: {
+                    text: null
+                },
+                xAxis: {
+                    alternateGridColor: "rgba(242,253,242,0.5)",
+                    tickLength: 0,
+                    tickWidth: 0,
+                    gridLineColor: "#ebebeb",
+                    gridLineDashStyle: "longDash",
+                    gridLineWidth: 1,
+                    title: {
+                        text: null
+                    },
+                    labels: {
+                        enabled: true,
+                        style: {
+                            fontSize: 12,
+                            fontFamily: "Arial",
+                            color: "#aaaaaa"
+                        },
+
+                    },
+                    offset: 0,
+                    lineWidth: 1,
+                    lineColor: "#cacaca",
+                },
+                yAxis: {
+                    // startOnTick: true,
+                    // tickPixelInterval: 80,
+                    tickWidth: 0,
+                    // offset: 150,
+                    alternateGridColor: "rgba(244,248,248,0.5)",
+                    gridLineColor: "#ebebeb",
+                    gridLineDashStyle: "longDash",
+                    title: {
+                        text: null
+                    },
+                    lineWidth: 0,
+                    labels: {
+                        align: "right",
+                        enabled: true,
+                        y: 10,
+                        style: {
+                            fontSize: 12,
+                            fontFamily: "Arial",
+                            color: "#aaaaaa"
+                        }
+                    }
+                },
+                series: [{
+                    color: "#f65854",
+                    type: "line",
+                    data: [],
+                    zIndex: 9,
+                    marker: {
+                        enabled: true,
+                        radius: 3,
+                        fillColor: 'white',
+                        lineColor: '#f65854',
+                        lineWidth: 3,
+                        symbol: 'circle'
+                    },
+                }, {
+                    color: "#95c9e0",
+                    type: "line",
+                    data: [],
+                    zIndex: 9, marker: {
+                        enabled: true,
+                        radius: 3,
+                        fillColor: 'white',
+                        lineColor: '#95c9e0',
+                        lineWidth: 3,
+                        symbol: 'circle'
+                    },
+                }, {
+                    color: "#55a8a3",
+                    type: "line",
+                    data: [],
+                    zIndex: 9, marker: {
+                        enabled: true,
+                        radius: 3,
+                        fillColor: 'white',
+                        lineColor: '#55a8a3',
+                        lineWidth: 3,
+                        symbol: 'circle'
+                    },
+                }]
+            },
+            renderTo: "temContentChart"
+
+        });
+
+    }
+    </script>

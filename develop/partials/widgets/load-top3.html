@@ -1,0 +1,21 @@
+﻿<!-- 负载前三 -->
+<div class="widget_load_1x1 widget">
+    <div class="widget_name">
+        <em></em><span class="na">{{title}}</span>
+        <span>{{subtitle}}</span>
+    </div>
+    <div style="margin-top: 30px;">
+        <div class="wy_one" ng-repeat="item in items">
+            <div class="con_l" ng-class="{first:{{$first}}}">{{$index+1}}</div>
+            <div class="con_r">
+                <div class="con_r_t"><em>{{item.name}}</em><span>当前功率是<em>{{item.value}}{{item.unit}}</em></span></div>
+                <div class="con_r_b">
+                    <div class="con_r_b_bg">
+                        <div class="con_r_b_bar bar_r" style="width: {{item.percent}}%"></div>
+                    </div>
+                    <div class="con_r_b_value co_r" style="left: {{item.percent}}%">{{item.percent | number:2}}%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

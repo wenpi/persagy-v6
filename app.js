@@ -32,11 +32,13 @@ app.use(express.session({
 // 
 app.use(require('./controllers/sign').auth_user);
 
-app.use(express.csrf());
-app.use(function(req, res, next) {
-  res.locals.csrf = req.csrfToken();
-  next();
-});
+//todo  csrf for ajax
+
+// app.use(express.csrf());
+// app.use(function(req, res, next) {
+//   res.locals.csrf = req.csrfToken();
+//   next();
+// });
 
 app.use(app.router);
 

@@ -3,6 +3,7 @@
   "unused": true,
   "node": true,
   "browser": true,
+  "devel": true,
   "laxcomma": true,
   "jquery": true,
   "globals": {

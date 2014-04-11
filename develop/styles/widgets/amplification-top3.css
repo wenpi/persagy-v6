@@ -1,0 +1,87 @@
+﻿/*用电指标增幅*/
+.widget_amplification_1x2 {
+    color: #4f4f4f;
+    height: 300px;
+    position: relative;
+}
+
+    .widget_amplification_1x2 .energy_con {
+        width: 30%;
+        float: left;
+        font-size: 14px;
+    }
+
+    .widget_amplification_1x2 .energy_circle {
+        margin: 30px auto;
+        height: 150px;
+        width: 30%;
+        float: left;
+    }
+
+        .widget_amplification_1x2 .energy_circle canvas {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            display: block;
+        }
+
+    .widget_amplification_1x2 .energyvalue {
+        text-align: center;
+        width: 130px;
+        margin: 65px auto 0px;
+        line-height: 30px;
+        height: 130px;
+    }
+
+        .widget_amplification_1x2 .energyvalue span {
+            font-size: 30px;
+            display: block;
+            height: 54px;
+            line-height: 80px;
+        }
+
+        .widget_amplification_1x2 .energyvalue em {
+            font-size: 12px;
+            display: block;
+        }
+
+    .widget_amplification_1x2 .energy_circle_name {
+        width: 91px;
+        height: 23px;
+        -webkit-border-radius: 20px;
+        border-radius: 20px;
+        background: #eee;
+        border: 1px solid #ddd;
+        line-height: 23px;
+        text-align: center;
+        color: #2f352a;
+        margin: 0px auto 10px;
+    }
+
+        .widget_amplification_1x2 .energy_circle_name span {
+            width: 23px;
+            height: 23px;
+            -webkit-border-radius: 20px;
+            border-radius: 20px;
+            color: #fff;
+            font-family: 'Arial';
+            text-align: center;
+            line-height: 23px;
+            display: block;
+            float: left;
+        }
+
+    .widget_amplification_1x2 .energy_circle_percentage {
+        height: 30px;
+        line-height: 30px;
+        width: 91px;
+        margin: 0 auto;
+    }
+
+        .widget_amplification_1x2 .energy_circle_percentage span {
+            width: 16px;
+            height: 9px;
+            display: block;
+            float: left;
+            margin: 10px 0 0 10px;
+        }

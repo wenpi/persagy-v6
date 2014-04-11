@@ -1,39 +1,58 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <title>登陆</title>
+<head>
+    <title>登录</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/signin.css" >
+    <link rel="stylesheet" href="styles/signin.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-    <div class="container">
-      <% if(locals.error){ %>
-      <div class="alert alert-danger alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <strong><%= error %></strong>
-      </div>
-      <% } %>
-      <form class="form-signin" method="post" action="/signin" role="form">
-        <h2 class="form-signin-heading">请登陆</h2>
-        <input type="text" class="form-control" placeholder="用户名" name="id" required autofocus>
-        <input type="password" class="form-control" placeholder="密码" name="password" required>
-        <label class="checkbox">
-          <input type="checkbox" name="remember" value="remember"> 记住登陆
-        </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
-        <input type='hidden' name='_csrf' value='<%= csrf %>' />
-      </form>
+</head>
+<body>
+    <div class="signinPanel">
+        <form class="" method="post" action="/signin" role="form">
+        <div class="login_head"></div>
+        <div class="login_form">
 
+                <div class="lBox_input">
+                    <div class="l_usename">
+                        <label for="v5_login_name">用户名</label>
+                        <input type="text" placeholder="用户名" name="id" required autofocus id="v5_login_name">
+                    </div>
+                    <div class="l_usepassword">
+                        <label for="v5_login_password">密&nbsp;&nbsp;&nbsp;码</label>
+                        <input type="password" placeholder="密码" id="v5_login_password" name="password" required>
+                    </div>
+                   <% if(locals.error){ %>
+                    <div class="l_Error"><%= error %></div>
+                    <% } %>
+                </div>
+                <div class="lBox_btn">
+                    <label class="checkbox">
+                        <input type="checkbox" name="remember" value="remember">
+                        记住密码
+                    </label>
+                    <button class="btn btn-lg btn-default" id="submitBtn" type="submit">登录</button>
+                    <div class="login_loading" id="login_loading"></div>
+                </div>
+        </div>
+        </form>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script> -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <!-- <script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script> -->
-  </body>
+    <script>
+        var loginBtn = document.getElementById("login_loading"),
+            submitBtn = document.getElementById("submitBtn");
+        submitBtn.onclick = function () {
+            console.log(loginBtn);
+            loginBtn.className = "login_loading inLogin";
+        }
+
+    </script>
+</body>
 </html>

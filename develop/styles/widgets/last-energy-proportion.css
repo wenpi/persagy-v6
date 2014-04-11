@@ -1,0 +1,81 @@
+.widget_LastEnergyProportion_2x1 {
+    width: 568px;
+    height: 268px;
+    border: 1px solid #666;
+    background: #fff;
+    position: relative;
+    padding: 10px 10px 10px 0px;
+}
+
+    .widget_LastEnergyProportion_2x1 .areaContent {
+        margin-top: 15px;
+        padding: 15px;
+        height: 200px;
+        overflow: hidden;
+    }
+
+.widget_energyT .areaContent .areaT {
+    float: left;
+    width: 250px;
+    height: 100px;
+    margin-right: 15px;
+    margin-bottom: 12px;
+}
+
+    .widget_energyT .areaContent .areaT .areatp {
+        width: 100%;
+        height: 20px;
+    }
+
+    .widget_energyT .areaContent .areaT span {
+        width: 17px;
+        height: 17px;
+        display: block;
+        float: left;
+    }
+
+        .widget_energyT .areaContent .areaT span.tpo {
+            background: url(../../imgs/widgets/last-energy-proportion/energy-fang.jpg) no-repeat right bottom;
+        }
+
+        .widget_energyT .areaContent .areaT span.tpt {
+            background: url(../../imgs/widgets/last-energy-proportion/energy-people.jpg) no-repeat right bottom;
+        }
+
+        .widget_energyT .areaContent .areaT span.tph {
+            background: url(../../imgs/widgets/last-energy-proportion/nergy-money.jpg) no-repeat right bottom;
+        }
+
+        .widget_energyT .areaContent .areaT span.tpf {
+            background: url(../../imgs/widgets/last-energy-proportion/energy-che.jpg) no-repeat right bottom;
+        }
+
+.widget_energyT .areaContent .areatp span.special {
+    color: #727272;
+    line-height: 18px;
+    font-weight: bold;
+    text-indent: 8px;
+    width: 225px;
+    height: 20px;
+    float: left;
+}
+
+.widget_energyT .areaContent .areaT .totaldata {
+    width: 100%;
+    height: 70px;
+}
+
+    .widget_energyT .areaContent .areaT .totaldata .data {
+        width: 60%;
+        height: 100%;
+        line-height: 80px;
+        float: left;
+        font-size: 40px;
+    }
+
+    .widget_energyT .areaContent .areaT .totaldata .danw {
+        float: left;
+        position: relative;
+        top: 38px;
+        left: 10px;
+    }

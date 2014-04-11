@@ -1,0 +1,23 @@
+﻿<div class="widget_EnergyProportion_2x1 widget">
+    <div class="widget_name">
+        <em></em><span class="na">{{title}}</span>
+        <span>{{subtitle}}</span>
+    </div>
+    <div class="energyProportionBottom">
+        <div class="proportionBottomLeft">
+            <div class="pie_chart"></div>
+        </div>
+        <div class="proportionBottomRight">
+            <div class="proporRightCont">
+                <div class="proporRightContOver">
+                <ul>
+                    <li ng-repeat="item in items">
+                        <div style="background: {{$parent.colors[$index]}};"></div>
+                        <span><em class="ri">{{item.energyName}}</em><em>{{item.energyProbe | number:2}}%</em></span><span class="co"><em class="ri"> {{item.sumEnergy | number : 2}} {{item.unit}}</em><em ng-show="!!item.maxBuildingName">{{item.maxBuildingName}}占比最大: {{item.maxEnergyProbe | number : 2}}%</em></span>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,304 @@
+/* ÄÜºÄÇ÷ÊÆ */
+.widget_energyTrend_2x2 {
+    height: 650px;
+    background: #ffffff;
+}
+.widget_energyTrend_2x2 .energyTrendHeader {
+    width: 100%;
+    height: 92px;
+    position: relative;
+}
+.widget_energyTrend_2x2 .energyTrendListCont {
+    width: 100%;
+    height: 32px;
+    position: relative;
+}
+.widget_energyTrend_2x2 .energyTrendListCont .trendListLeft {
+    position: absolute;
+    top: 0px;
+    left: 48px;
+    height: 32px;
+    width: 260px;
+}
+.widget_energyTrend_2x2 .trendListLeft .trendTypeList {
+    width: 118px;
+    height: 28px;
+    border: 1px solid #cacaca;
+    border-radius: 3px;
+    position: relative;
+    float: left;
+    cursor: pointer;
+}
+.widget_energyTrend_2x2 .trendListLeft .trendTimeList {
+    margin-left: 8px;
+    width: 58px;
+    height: 28px;
+    border: 1px solid #cacaca;
+    border-radius: 3px;
+    position: relative;
+    float: left;
+    cursor: pointer;
+}
+.widget_energyTrend_2x2 .trendListLeft .trendListHeader {
+    width: 100%;
+    height: 28px;
+    position: relative;
+    line-height: 28px;
+    text-indent: 8px;
+    font-size: 14px;
+    color: #4f4f4f;
+}
+.widget_energyTrend_2x2 .trendListLeft .trendListArrow {
+    position: absolute;
+    right: 9px;
+    bottom: 11px;
+    height: 7px;
+    width: 9px;
+    background: url(../../imgs/widgets/energy-trend/trendListArrow.png) no-repeat center center;
+}
+.widget_energyTrend_2x2 .trendListLeft .trendListCont {
+    position: absolute;
+    top: 28px;
+    left: -1px;
+    width: 100%;
+    border: 1px solid #cacaca;
+    display: none;
+    z-index: 2;
+}
+.widget_energyTrend_2x2 .trendListLeft .trendListCont ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.widget_energyTrend_2x2 .trendListLeft .trendListCont li {
+    width: 100%;
+    height: 34px;
+    border-bottom: 1px solid #dddddd;
+    line-height: 34px;
+    font-size: 12px;
+    color: #4f4f4f;
+    text-indent: 8px;
+    background: #ffffff;
+}
+.widget_energyTrend_2x2 .trendListLeft .trendListCont li:last-child {
+    border: none;
+}
+.widget_energyTrend_2x2 .energyTrendListCont .trendListright {
+    position: absolute;
+    top: 0px;
+    right: 32px;
+    height: 32px;
+    font-size: 12px;
+    color: #808080;
+    line-height: 32px;
+}
+.widget_energyTrend_2x2 .trendRedBlock,
+.trendGrayBlock {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+}
+.widget_energyTrend_2x2 .trendListright .trendRedBlock {
+    background: #eb525d;
+    margin-right: 5px;
+}
+.widget_energyTrend_2x2 .trendListright .trendGrayBlock {
+    background: #dddddd;
+    margin-left: 24px;
+    margin-right: 5px;
+}
+    .widget_energyTrend_2x2 .trendListright div {
+    float:left;
+    height:32px;
+    }
+.energySelectDiv {
+   width:120px;
+   float:left;
+   height:29px;
+   position:relative;
+}
+.timeSelectDiv {
+    margin-left:8px;
+    width:60px;
+    float:left; 
+    height:29px;
+    position:relative;
+}
+.energySelect{
+   width:120px;
+   height:29px;
+   -webkit-appearance:none;
+   -moz-appearance:none;
+   -ms-appearance:none;
+}
+.timeSelect{
+    width:60px;
+    height:29px;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+} 
+.trendListArrowSpan {
+    display:block;
+    pointer-events:none;
+    width:9px;
+    width:0px\0;
+    height:7px;
+    position:absolute;
+    top:10px;
+    right:9px;
+    background-image:url(../../imgs/widgets/energy-trend/trendListArrow.png);
+    background-repeat:no-repeat;
+    background-position:left center;
+}
+.widget_energyTrend_2x2 .energyTrendChart {
+    margin-top: 32px;
+    width: 100%;
+    height: 270px;
+    margin-bottom: 50px;
+}
+.widget_energyTrend_2x2 .energyTrendBottom {
+    width: 100%;
+    height: 110px;
+}
+.widget_energyTrend_2x2 .trendBottomTotal,
+.trendBottomCompare {
+    width: 50%;
+    height: 110px;
+    float: left;
+    position: relative;
+}
+.widget_energyTrend_2x2 .trendBottomTitle {
+    width: 100%;
+    height: 44px;
+    text-align: center;
+    color: #4f4f4f;
+    font-size: 14px;
+}
+.widget_energyTrend_2x2 .trendBottomTitle .trendBottomtPic,
+.BottomComparePic {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+.widget_energyTrend_2x2 .trendBottomtPic {
+    background: url(../../imgs/widgets/energy-trend/trendBottomtPic.png) no-repeat center center;
+}
+.widget_energyTrend_2x2 .BottomComparePic {
+    background: url(../../imgs/widgets/energy-trend/BottomComparePic.png) no-repeat center center;
+}
+.widget_energyTrend_2x2 .trendBottomTotal .trendElecvalue {
+    width: 100%;
+    height: 48px;
+    text-align: center;
+    color: #4f4f4f;
+    font-size: 48px;
+    line-height: 48px;
+}
+.widget_energyTrend_2x2 .trendBottomTotal .trendBottomBorder {
+    position: absolute;
+    top: -6px;
+    right: 0px;
+    height: 98px;
+    width: 0px;
+    border-left: 1px solid #cccccc;
+}
+.widget_energyTrend_2x2 .trendBottomCompare .trendComparevalue {
+    width: 100%;
+    height: 48px;
+    position: relative;
+}
+.widget_energyTrend_2x2 .trendComparevalue .compareLeft {
+    margin-left: 7%;
+    width: 54%;
+    float: left;
+    text-align: center;
+    height: 48px;
+    color: #4f4f4f;
+    font-size: 36px;
+    line-height: 56px;
+}
+.widget_energyTrend_2x2 .trendComparevalue .compareRight {
+    width: 34%;
+    float: left;
+    height: 100%;
+    color: #808080;
+    font-size: 12px;
+    line-height: 24px;
+}
+.widget_energyTrend_2x2 .compareLeft .compLeftArrow {
+    display: inline-block;
+    width: 16px;
+    height: 9px;
+    /*margin-right: 4px;*/
+}
+.widget_energyTrend_2x2 .compareLeft .trendcomPerc {
+    font-size: 30px;
+    margin-left: -10px;
+}
+.widget_energyTrend_2x2 .compLeftArrowUp {
+    background: url(../../imgs/widgets/energy-trend/compLeftArrowup.png) no-repeat center center;
+}
+.widget_energyTrend_2x2 .compLeftArrowEqual {
+    background: url(../../imgs/widgets/energy-trend/compLeftArrowequal.png) no-repeat center center;
+}
+.widget_energyTrend_2x2 .compLeftArrowDown {
+    background: url(../../imgs/widgets/energy-trend/compLeftArrowdown.png) no-repeat center center;
+}
+.widget_energyTrend_2x2 .energyTrendHeader .trendTitleSign {
+    width: 110px;
+    height: 28px;
+    font-size: 14px;
+    position: absolute;
+    right: 32px;
+    top: 2px;
+    border-radius: 4px;
+    border: 1px solid #d4d4d4;
+    overflow: hidden;
+}
+
+/* .widget_energyTrend_2x2 .trendTitleSign .trendEnergyspan {
+    display: inline-block;
+    width: 55px;
+    height: 28px;
+    background-color: #e5e5e5;
+    text-align: center;
+    line-height: 28px;
+}
+.widget_energyTrend_2x2 .trendTitleSign .trendSpendspan {
+    display: inline-block;
+    width: 55px;
+    height: 28px;
+    background-color: #ffffff;
+    text-align: center;
+    line-height: 28px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+*/
+.widget_energyTrend_2x2 .trendTitleSign ul {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    cursor: pointer;
+}
+.widget_energyTrend_2x2 .trendTitleSign ul li {
+    width: 50%;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    float: left;
+}
+.widget_energyTrend_2x2 .trendTitleSign span {
+    width: 50%;
+    height: 28px;
+    background: #e5e5e5;
+    position: absolute;
+    z-index: 1;
+    -webkit-transition: 0.5s;
+    left: 0;
+}
+
+

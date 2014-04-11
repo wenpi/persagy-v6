@@ -1,0 +1,18 @@
+﻿<!-- 变压器温度最高前三名  -->
+<div class="widget_temperature_1x1 widget">
+    <div class="widget_name">
+        <em></em><span class="na">{{title}}</span>
+        <span>{{subtitle}}</span>
+    </div>
+    <div class="temperature_con">
+        <div class="temperature_one" ng-repeat="item in items">
+            <div class="tc_1">{{$index+1}}</div>
+            <div class="temperature_circle">
+                <span class="y_bg"></span>
+                <span class="y_bgm bg_r"></span>
+                <div><em class="va c_r" style="bottom: {{item.percent}}%">{{item.percent | number:2}}%</em><span class="ba bg_r" style="height: {{item.percent}}%"></span></div>
+            </div>
+            <div class="transforname">{{item.name}}</div>
+        </div>
+    </div>
+</div>

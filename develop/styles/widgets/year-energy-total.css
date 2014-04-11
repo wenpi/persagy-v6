@@ -1,0 +1,31 @@
+﻿.widget_building_total_4x1 {
+    /* width: 1200px;
+    */
+}
+.widget_building_total_4x1 .lengend {
+    float: right;
+    margin-right:1.5%;
+}
+.widget_building_total_4x1 .lengend div {
+    float: left;
+    margin-left: 10px;
+}
+.widget_building_total_4x1 .lengend .gray,
+.widget_building_total_4x1 .lengend .green,
+.widget_building_total_4x1 .lengend .red {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+}
+.widget_building_total_4x1 .lengend .gray {
+    background-color: #E1E1E1;
+}
+.widget_building_total_4x1 .lengend .green {
+    background-color: #5FBBB5;
+}
+.widget_building_total_4x1 .lengend .red {
+    background-color: #F55753;
+}
+.widget_building_total_4x1 .sagy_chart {
+    width:100%;
+    }

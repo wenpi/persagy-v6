@@ -1,0 +1,54 @@
+﻿/*最常打印报表*/
+.widget_PrintReport_1x1  {
+    height:300px;
+    background:#ffffff;
+    position: relative;
+}
+.widget_PrintReport_1x1 .printReport_more {
+    display:none;
+    position:absolute;
+    right:0px;
+    top:6px;
+    width:50px;
+    height:25px;
+    border:1px solid #cacaca;
+    line-height:25px;
+    text-align:center;
+    font-size:12px;
+    color:#4e7ad3;
+    border-radius:3px;
+}
+
+.widget_PrintReport_1x1 .printReportCont {
+width:100%;
+height:190px;
+margin-top:52px;
+}
+.widget_PrintReport_1x1 .printReportItem {
+width:100%;
+height:60px;
+font-size:14px;
+color:#4f4f4f;
+text-indent:8px;
+line-height:32px;
+position:relative;
+}
+.widget_PrintReport_1x1 .printItemDown {
+text-indent:0px;
+position:absolute;
+top:4px;
+right:0px;
+width:72px;
+height:28px;
+border:1px solid #cacaca;
+text-align:center;
+line-height:28px;
+font-size:14px;
+color:#4f4f4f;
+border-radius:3px;
+cursor:pointer;
+background:#f5f5f5;
+}
+.widget_PrintReport_1x1 .printItemDown:hover {
+background:#dcdcdc;    
+}

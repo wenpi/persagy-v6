@@ -1,0 +1,122 @@
+/*变压器温度最高前三名*/
+.widget_temperature_1x1 {
+height:300px;
+position:relative;
+}
+.widget_temperature_1x1 .temperature_con .tc_1 {
+    color: #959595 !important;
+}
+
+.widget_temperature_1x1 .temperature_one {
+    width: 90px;
+    text-align: center;
+    color: #cacaca;
+    position:relative;
+    float:left;
+}
+
+    .widget_temperature_1x1 .abs30 {
+    left:30%;}
+ .widget_temperature_1x1 .abs60 {
+    left:60%;}
+    .widget_temperature_1x1 .temperature_one div:last-child {
+        color: #4f4f4f;
+    }
+
+.widget_temperature_1x1 .temperature_circle {
+    height: 190px;
+    position: relative;
+    width: 28px;
+margin: 0 auto 20px;}
+
+    .widget_temperature_1x1 .temperature_circle .y_bg {
+        width: 25px;
+        height: 25px;
+        background: #ededed;
+        -webkit-border-radius: 25px;
+        border-radius: 25px;
+        border: 1px solid #ededed;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+    }
+
+
+    .widget_temperature_1x1 .temperature_circle .y_bgm {
+        width: 15px;
+        height: 15px;
+        -webkit-border-radius: 25px;
+        border-radius: 25px;
+        display: block;
+        position: absolute;
+        bottom: 6px;
+        z-index: 4;
+        left: 6px;
+    }
+
+    .widget_temperature_1x1 .temperature_circle .bg_r {
+        background: #F07C61;
+    }
+
+    .widget_temperature_1x1 .temperature_circle .bg_y {
+        background: #f0bc61;
+    }
+
+    .widget_temperature_1x1 .temperature_circle .bg_b {
+        background: #67bdb9;
+    }
+
+    .widget_temperature_1x1 .temperature_circle .c_r {
+        color: #F07C61;
+    }
+
+    .widget_temperature_1x1 .temperature_circle .c_y {
+        color: #f0bc61;
+    }
+
+    .widget_temperature_1x1 .temperature_circle .c_b {
+        color: #67bdb9;
+    }
+
+    .widget_temperature_1x1 .temperature_circle > div {
+        width: 13px;
+        height: 160px;
+        background: #ededed;
+        -webkit-border-radius: 25px 25px 0 0;
+        border-radius: 25px 25px 0 0;
+        border: 1px solid #ededed;
+        position: absolute;
+        z-index: 2;
+        left: 6px;
+        bottom: 18px;
+    }
+
+        .widget_temperature_1x1 .temperature_circle > div > span {
+            width: 7px;
+            border-radius: 25px 25px 0 0;
+            -webkit-border-radius: 25px 25px 0 0;
+            margin-left: 3px;
+            display: block;
+            position: absolute;
+            bottom: -2px;
+            -webkit-transition: 0.5s;
+            -moz-transition: 0.5s;
+            -ms-transition: 0.5s;
+            height:100%;
+        }
+
+        .widget_temperature_1x1 .temperature_circle > div > em {
+            position: absolute;
+            bottom: 20%;
+            left: 15px;
+            color: #F07C61;
+            font-size: 16px;
+            -webkit-transition: 0.5s;
+            -moz-transition: 0.5s;
+            -ms-transition: 0.5s;
+        }
+
+            .widget_temperature_1x1 .temperature_circle > div > em i {
+                font-size: 12px;
+            }

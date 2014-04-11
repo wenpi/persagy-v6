@@ -1,0 +1,175 @@
+﻿<div class="widget_LastEnergyStrend_2x1 widget">
+        <div class="widget_name">
+            <em></em><span class="na">{{title}}</span>
+            <span>{{subtitle}}</span>
+        </div>
+        <div class="shiContent">
+            <div class="shiContenttop">
+                <div class="shiContentl">
+                    <ul id="shiCombox">
+                        <li class="selected">室内</li>
+                        <li style="border-right: 1px solid #d4d4d4;">室外</li>
+                    </ul>
+                </div>
+                <div class="shiContentr">
+                    <ul id="shiCommenu">
+                        <li>日</li>
+                        <li class="selected">周</li>
+                        <li style="border-right: 1px solid #d4d4d4;">月</li>
+                    </ul>
+                </div>
+               
+            </div>
+        
+            <div class="shiContentbottom" id="shiContentChart">
+
+            </div>
+        </div>
+    </div>
+<script>
+    var sc_chart;
+    $(function () {
+        $('#shiCombox').on('click', function (e) {
+            e.stopPropagation();
+            var that = e.target;
+            if (that.tagName == "LI") {
+                $(that).addClass("selected")
+                .siblings().removeClass("selected");
+            }
+        });
+        $('#shiCommenu').on('click', function (e) {
+            e.stopPropagation();
+            var that = e.target;
+            if (that.tagName == "LI") {
+                $(that).addClass("selected")
+                 .siblings().removeClass("selected");
+            }
+        });
+        
+        creatChart();
+        var chartData = { xData: [3.22, 3.24, 3.26, 3.28, 3.30, 3.32, 3.34], yData: [5, 7, -5, -10, 8, 9, -2] };
+       
+        sc_chart.setData(chartData, 0);
+    
+    });
+    function creatChart() {
+        sc_chart = sagyChart({
+            chartOption: {
+                chart: {
+                    backgroundColor: "rgba(255,0,0,0)",
+                    type: 'line',
+                    // spacingBottom: 20,
+                    marginRight: 10,
+                    marginLeft: 30,
+                    // spacingLeft: 0,
+                    marginBottom: 40,
+                    plotBorderWidth: 0,
+                    plotBackgroundColor: "#fffff9",
+                    height: 180,
+                    width: 550
+                },
+
+
+                legend: {
+                    enabled: false
+                },
+                credits: {
+                    enabled: false,
+                },
+                plotOptions: {
+                    series: {
+                        turboThreshold: 200000,
+                        stickyTracking: false,
+                        states: {
+                            hover: {
+                                enabled: false
+                            }
+                        },
+                        pointPadding: -0.2,
+                        borderWidth: 0,
+                        groupPadding: 0.2,
+                        // pointPlacement: "on",
+                        shadow: false
+                    }
+                },
+                tooltip: {
+                    enabled: true,
+                    animation: false,
+                    backgroundColor: null,
+                    borderWidth: 0,
+                    shadow: false,
+                    formatter: function () {
+                        return '<span>' + this.y + '</span><br/><span>' + this.x + '</span>';
+                    },
+                },
+                title: {
+                    text: null
+                },
+                xAxis: {
+                    alternateGridColor: "rgba(242,253,242,0.5)",
+                    tickLength: 0,
+                    tickWidth: 0,
+                    gridLineColor: "#ebebeb",
+                    gridLineDashStyle: "longDash",
+                    gridLineWidth: 1,
+
+
+                    title: {
+                        text: null
+                    },
+                    labels: {
+                        enabled: true,
+                        style: {
+                            fontSize: 12,
+                            fontFamily: "Arial",
+                            color: "#aaaaaa"
+                        },
+
+                    },
+                    offset: 0,
+                    lineWidth: 1,
+                    lineColor: "#cacaca",
+                },
+                yAxis: {
+                    // startOnTick: true,
+                    // tickPixelInterval: 80,
+                    tickWidth: 0,
+                    // offset: 150,
+                    alternateGridColor: "rgba(244,248,248,0.5)",
+                    gridLineColor: "#ebebeb",
+                    gridLineDashStyle: "longDash",
+                    title: {
+                        text: null
+                    },
+                    lineWidth: 0,
+                    labels: { 
+                        align: "right",
+                        enabled: true,
+                        y: 10,
+                        style: {
+                            fontSize: 12,
+                            fontFamily: "Arial",
+                            color: "#aaaaaa"
+                        }
+                    }
+                },
+                series: [{
+                    color: "#9bd5d2",
+                    type: "line",
+                    data: [],
+                    zIndex: 9, marker: {
+                        enabled: true,
+                        radius: 3,
+                        fillColor: 'white',
+                        lineColor: '#9bd5d2',
+                        lineWidth: 3,
+                        symbol: 'circle'
+                    },
+                }]
+            },
+            renderTo: "shiContentChart"
+
+        });
+
+    }
+    </script>

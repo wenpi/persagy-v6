@@ -1,200 +1,1027 @@
 @import './widgets/about-info.css';
+@import './widgets/energy-calendar.css';
+/* 能耗日历 */
+@import './widgets/energy-saving-count.css';
+/* 节能统计 */
+@import './widgets/energy-saving-display.css';
+/* 节能改造 */
+@import './widgets/energy-trend.css';
+/* 建筑能耗趋势 */
+@import './widgets/load-top3.css';
+/* 变压器负载率前三名 */
+@import './widgets/day-monitoring.css';
+/* 24小时实时监控 */
+@import './widgets/temperature-top3.css';
+/* 变压器温度最高前三名 */
+@import './widgets/amplification-top3.css';
+/* 用电指标增幅最大前三名 */
+@import './widgets/pie-solid-text.css';
+/* 本年能耗分项占比 */
+@import './widgets/pie-hollow-data.css';
+/* 各地区年能耗占比 */
+@import './widgets/year-energy-total.css';
+/* 年度能耗汇总 */
+@import './widgets/jCal.small.css';
+/* 最常打印报表 */
+@import './widgets/print-report-style.css';
+/* 上月指标状况 */
+@import './widgets/four-parameter-text.css';
+/* 建筑湿度趋势 */
+@import './widgets/last-energy-strend.css';
+/* 建筑温度趋势 */
+@import './widgets/last-energy-trend.css';
+/* 上月能耗分项占比 */
+@import './widgets/last-energy-fenxiang.css';
+/* calend日历样式 */
 
-* {
-  font-family: Arial,"方正黑体简体","黑体",微软雅黑,Microsoft YaHei,SimHei,SimSun;color: #4f4f4f;
-}
-body ::-webkit-scrollbar {
-  width:8px;height: 8px;
-}
-body ::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0.1);-webkit-border-radius: 8px;
-}
-body ::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 8px;background: rgba(0, 0, 0, 0.3);
-}
-body ::-webkit-scrollbar-thumb:vertical:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.clearfix:before, .clearfix:after {
-  content: '.';
-  display: block;
-  overflow: hidden;
-  visibility: hidden;
-  font-size: 0;
-  line-height: 0;
-  width: 0;
-  height: 0;
-}
-
-.clearfix:after {
-  clear: both;
-}
-body{cursor:default;font-family:微软雅黑,Microsoft YaHei,"方正黑体简体","黑体";}
-a{text-decoration:none;color:#ffffff;}
-b {font-weight: normal;}
-
-#header{width:100%;height:60px;background:#34373c;position:fixed;left:0;top:0;}
-#head_title{width:auto;margin:0 auto;max-width:260px;min-width:200px;text-align:center;height:60px;}
-#head_title>div{
-padding-left:50px;height:60px;line-height:65px;font-size:20px;text-align:left;
-color:rgba(255,255,255,.9);float:left;background:url(../imgs/nav/title_logo.png) no-repeat 0px 15px;
-}
-#head_right{
-  float:right;min-width:300px;height:60px;color:#808080;padding-right:50px;
-}
-#head_right ul{height:30px;padding-top:15px;line-height:30px;}
-#head_right ul li{
-  cursor:pointer;min-width:30px;width:auto;float:right;color:#ffffff;
-  border-left:1px solid #5f646c;padding:0 15px 0 50px;opacity:.8;
-  background-image:url(../imgs/nav/header_right.png);
-  background-repeat:no-repeat;height:30px;line-height:30px;
-  background-position:0px 0px;
+body ::-webkit-scrollbar, body::-webkit-scrollbar
+{
+    width: 8px;
+    height: 8px;
 }
 
-#head_right ul li:hover{opacity:1;}
-
-#head_right ul li.h_Exit{background-position:10px -60px;}
-#head_right ul li.h_Manage{background-position:10px -30px;}
-#head_right ul li.h_CallPolice{background-position:10px 0px;}
-
-#head_Menu{
-  cursor:pointer;float:left;width:100px;height:60px;
-  background-image:url(../imgs/nav/head_menu.png);
-  background-repeat:no-repeat;
-  background-position: center center;
-  background-color: #34373c;
+body ::-webkit-scrollbar-track, body::-webkit-scrollbar-track
+{
+    background-color: rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 8px;
 }
 
-.head_navWrap{width:auto;position:fixed;left:0;top:0;}
-.head_Menu{}
-.head_Menu>div{
-  cursor:pointer;
-  float:left;
-  width:100px;
-  height:60px;
-  background:rgba(0,0,0,.1);
-  display:block;
-}
-.head_MenuCur>div{display:none;}
-.navList{
-  position:fixed;top:60px;
-  left:-120px;width:100px;
-  /*left:0px;width:240px;*/
-  height:100%;
-  cursor:pointer;
-  overflow:hidden;
-  background: #4a555e;
-  box-shadow: 3px 0px 5px rgba(0,0,0,.3);
-  -webkit-box-shadow: 3px 0px 5px rgba(0,0,0,.3);
-}
-.nav_option{width:240px;overflow:hidden;}
-.nav_option li{
-  height:60px;line-height:60px;background: #4a555e;
-  color:#ffffff;font-size:16px;text-align:left;
-  border-bottom:1px solid #535e66;
-}
-.nav_option li a{width:100%;height:60px;display:block;}
-.nav_option li div.o_ico{
-  width:100px;height:60px;float:left;opacity:.5;
-  background-position:0 0;
-  background-repeat:no-repeat;
-  background-image:url(../imgs/nav/nav_optionIco.png);
-}
-.nav_option li div.o_overviewMessage{background-position:center 0;}
-.nav_option li div.o_map{background-position:center -60px;}
-.nav_option li div.o_BuildingContrast{background-position:center -120px;}
-.nav_option li div.o_management{background-position:center -180px;}
-.nav_option li div.o_PrintIt{background-position:center -240px;}
-
-.nav_option li div.o_ico span{display:block;float:left;width:6px;height:60px;}
-
-.nav_option li div.o_text{width:140px;height:60px;float:left;color:#ffffff;}
-
-.nav_option li:hover{
-  background:#5b6771;
-}
-.nav_option li:hover div.o_ico{
-  opacity:1;
-}
-.nav_option li:hover div.o_ico span{
-  background:#ca0c00;
-}
-.nav_option li.optionSelect{background:#5b6771;}
-.nav_option li.optionSelect div.o_ico{opacity:1;}
-.nav_option li.optionSelect div.o_ico span{background:#2aa738;}
-
-.nav_o2 li div.o_ico{background-image:url(../imgs/nav/BulidingIco.png);}
-.nav_building{margin-top:30px;height:auto;position:relative;}
-.nav_building .navBuild_title{
-  height:60px;position:relative;width:240px;overflow:hidden;
-}
-.navBuild_title span.b_normal{
-  position:absolute;
-  left:0;
-  top:0;
-  height:60px;
-  width:30px;
-  display:block;
-  background-image:url(../imgs/nav/BulidingIco.png);
-  background-repeat:no-repeat;
-  background-position:center -300px;
-  opacity:.5
-}
-.navBuild_title span.pull{background-position:center -360px;opacity:.5}
-.navBuild_title span.b_normal:hover{opacity:1;}
-.navBuild_title span.pull:hover{opacity:1;}
-
-
-.navBuild_title b.b_more{
-  position:absolute;
-  top:0;
-  left:200px; 
-  width:40px;
-  height:60px;
-  display:block;
-  background:url(../imgs/nav/BulidingIco.png) no-repeat center -240px;
-  opacity:.5;
-}
-.navBuild_title b.b_moreCur{opacity:1;}
-.navBuild_title div.navBulid_ico{
-  width:100px;height:60px;opacity:.5;float:left;
-  background:url(../imgs/nav/BulidingIco.png) no-repeat 37px 0;
-}
-.nav_option li div.o_elec{background-position:center -60px;}
-.nav_option li div.o_light{background-position:center -120px;}
-.nav_option li div.o_distribution{background-position:center -180px;}
-
-.navBuild_title div.navBulid_text{
-  width:100px;height:60px;line-height:60px;font-size:16px;
-  white-space:nowrap;padding:0 40px 0 0;color:#ffffff;float:left;
-}
-.nav_building:hover .navBuild_title div.navBulid_ico{opacity:1;}
-
-.BuildingChoose{display:none;position:absolute;left:250px;top:235px;width:505px;height:385px;background:#f00;}
-
-.py_container{
-  width:100%;height:auto;min-height:450px;height:auto;
-}
-.py_content{
-  min-width:1280px;
-  max-width:1600px;
-  margin:0 auto;
-  /*border:1px solid blue;*/
-  min-height:490px;
-  height:auto;
-  padding-top:60px;
-}
-.py_table{
-  width: 100%;
-}
-.py_table td{
-  height: 300px;
-  border:1px solid red;
+body ::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb
+{
+    -webkit-border-radius: 8px;
+    background: rgba(0, 0, 0, 0.3);
 }
 
-.widget_loading {
-  width:100%;
-  height:100%;
-  background:url(../imgs/home/loading.gif) no-repeat center center;
+    body ::-webkit-scrollbar-thumb:vertical:hover, body::-webkit-scrollbar-thumb:vertical:hover
+    {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+.parameter_scrollbar_y
+{
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
+.clearfix:before,
+.clearfix:after
+{
+    content: '.';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    font-size: 0;
+    line-height: 0;
+    width: 0;
+    height: 0;
+}
+
+.clearfix:after
+{
+    clear: both;
+}
+
+body
+{
+    cursor: default;
+}
+
+a
+{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+b
+{
+    font-weight: normal;
+}
+
+#header
+{
+    width: 100%;
+    height: 60px;
+    background: #34373c;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+
+#head_title
+{
+    width: auto;
+    margin: 0 auto;
+    max-width: 500px;
+    min-width: 200px;
+    text-align: center;
+    height: 60px;
+}
+
+    #head_title > div
+    {
+        padding-left: 50px;
+        height: 60px;
+        line-height: 65px;
+        font-size: 20px;
+        text-align: left;
+        color: rgba(255, 255, 255, .9);
+        float: left;
+        background: url(../imgs/nav/title_logo.png) no-repeat 0px 15px;
+    }
+
+    #head_title > span
+    {
+        display: inline-block;
+        /*padding-left: 159px;*/
+        height: 60px;
+        line-height: 65px;
+        font-size: 20px;
+        text-align: left;
+        color: rgba(255, 255, 255, .9);
+        background-position: 0px 15px;
+        background-repeat: no-repeat;
+    }
+
+#head_right
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #34373c;
+    min-width: 310px;
+    height: 60px;
+    color: #808080;
+    padding-right: 50px;
+}
+
+    #head_right ul
+    {
+        height: 30px;
+        padding-top: 15px;
+        line-height: 30px;
+    }
+
+        #head_right ul li
+        {
+            cursor: pointer;
+            min-width: 30px;
+            width: auto;
+            float: right;
+            color: #ffffff;
+            border-left: 1px solid #5f646c;
+            padding: 0 15px 0 50px;
+            opacity: .8;
+            background-image: url(../imgs/nav/header_right.png);
+            background-repeat: no-repeat;
+            height: 30px;
+            line-height: 30px;
+            background-position: 0px 0px;
+        }
+
+            #head_right ul li:hover
+            {
+                opacity: 1;
+            }
+
+            #head_right ul li.h_Exit
+            {
+                background-position: 10px -60px;
+            }
+
+            #head_right ul li.h_Manage
+            {
+                background-position: 10px -30px;
+            }
+
+            #head_right ul li.h_CallPolice
+            {
+                background-position: 10px 0px;
+                line-height: 32px;
+            }
+/*王鸯  全局报警tips*/
+#header .CallPolice_tips
+{
+    width: 400px;
+    background: rgba(26,26,26,0.9);
+    position: absolute;
+    right: 130px;
+    top: 80px;
+    -webkit-box-shadow: 0 0px 10px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 0px 10px rgba(0,0,0,0.5);
+    -ms-box-shadow: 0 0px 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0px 10px rgba(0,0,0,0.5);
+    display: none;
+    color: #fff;
+}
+
+.CallPolice_tips .triangle
+{
+    background: rgba(26,26,26,0.9);
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    left: 190px;
+    top: -9px;
+    -webkit-transform: rotate(45deg);
+}
+
+#header .CallPolice_tips .con_title
+{
+    height: 47px;
+    width: 100%;
+    background: rgba(26,26,26,1);
+    font-size: 18px;
+    line-height: 47px;
+}
+
+    #header .CallPolice_tips .con_title span
+    {
+        width: 18px;
+        height: 18px;
+        float: left;
+        margin: 14px;
+    }
+
+        #header .CallPolice_tips .con_title span.pic1
+        {
+            background: url(../imgs/nav/tips_1.png) no-repeat;
+        }
+
+        #header .CallPolice_tips .con_title span.pic2
+        {
+            background: url(../imgs/nav/tips_2.png) no-repeat;
+        }
+
+    #header .CallPolice_tips .con_title em
+    {
+        width: 16px;
+        height: 16px;
+        float: right;
+        background: url(../imgs/nav/tips_x.png) no-repeat;
+        margin: 15px;
+        cursor: pointer;
+    }
+
+#header .CallPolice_tips .content
+{
+    min-height: 40px;
+    height: 288px;
+}
+
+    #header .CallPolice_tips .content ul li
+    {
+        font-size: 12px;
+        height: 36px;
+        width: 100%;
+        line-height: 36px;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+        #header .CallPolice_tips .content ul li:hover
+        {
+            background: #3b3b3b;
+        }
+
+        #header .CallPolice_tips .content ul li span
+        {
+            width: 25%;
+            display: block;
+            float: left;
+            text-align: center;
+            text-overflow: ellipsis;
+            -webkit-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 12px;
+        }
+            /*#header .CallPolice_tips .content ul li span:nth-child(1) {
+    width:22%;
+    }
+     #header .CallPolice_tips .content ul li span:nth-child(4) {
+    width:18%;
+    }*/
+            #header .CallPolice_tips .content ul li span:last-child em
+            {
+                background: #3b3b3b;
+                -webkit-border-radius: 3px;
+                border-radius: 3px;
+                padding: 3px 5px;
+            }
+/*王鸯鸯 全局报警end*/
+
+#head_Menu
+{
+    cursor: pointer;
+    float: left;
+    width: 100px;
+    height: 60px;
+    background-image: url(../imgs/nav/head_menu.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #34373c;
+}
+
+.head_navWrap
+{
+    width: auto;
+    position: fixed;
+    left: 0;
+    z-index: 1000;
+    top: 0;
+}
+
+.head_Menu
+{
+}
+
+    .head_Menu > div
+    {
+        cursor: pointer;
+        float: left;
+        width: 100px;
+        height: 60px;
+        background: rgba(0, 0, 0, .1);
+        display: none;
+    }
+
+.head_MenuCur > div
+{
+    display: block;
+}
+
+.navList
+{
+    position: fixed;
+    top: 60px;
+    left: -120px;
+    width: 100px;
+    /* left: 0px; width: 240px;*/
+    padding-bottom:60px;
+    height: 100%;
+    cursor: pointer;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #4a555e;
+    box-shadow: 3px 0px 5px rgba(0, 0, 0, .3);
+    -webkit-box-shadow: 3px 0px 5px rgba(0, 0, 0, .3);
+    box-sizing:border-box;
+    -o-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}
+
+.nav_option
+{
+    width: 240px;
+    overflow: hidden;
+}
+
+.nav_o1
+{
+    min-height: 130px;
+}
+
+.nav_option li
+{
+    height: 60px;
+    line-height: 60px;
+    background: #4a555e;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: left;
+    border-bottom: 1px solid #535e66;
+}
+
+    .nav_option li a
+    {
+        width: 100%;
+        height: 60px;
+        display: block;
+    }
+
+    .nav_option li div.o_ico
+    {
+        width: 100px;
+        height: 60px;
+        float: left;
+        opacity: .5;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-image: url(../imgs/nav/nav_optionIco.png);
+    }
+
+    /*ico 名字以及 背景position
+
+/*
+EnergyAnalysis,数据分析
+Service,配电监控
+Grid,报表打印
+Gis,能耗地图
+BuildingCompare,建筑对比
+Parameter,对标管理
+MultiParameter,多楼对标
+ManualReport,人工填报
+EnergySaveCalc,节能量核算
+--null
+--null
+Tenement,物业监控
+SingleBuildingCompare,单楼对比
+--null
+--null
+--null
+    */
+    .nav_option li div.o_EnergyAnalysis
+    {
+        background-position: center -60px;
+    }
+
+    .nav_option li div.o_Service
+    {
+        background-position: center -120px;
+    }
+
+    .nav_option li div.o_Grid
+    {
+        background-position: center -180px;
+    }
+
+    .nav_option li div.o_Gis
+    {
+        background-position: center -240px;
+    }
+
+    .nav_option li div.o_BuildingCompare
+    {
+        background-position: center -300px;
+    }
+
+    .nav_option li div.o_Parameter
+    {
+        background-position: center -360px;
+    }
+
+    .nav_option li div.o_MultiParameter
+    {
+        background-position: center -420px;
+    }
+
+    .nav_option li div.o_ManualReport
+    {
+        background-position: center -480px;
+    }
+
+    .nav_option li div.o_EnergySaveCalc
+    {
+        background-position: center -540px;
+    }
+
+    .nav_option li div.o_Tenement
+    {
+        background-position: center -720px;
+    }
+
+    .nav_option li div.o_SingleBuildingCompare
+    {
+        background-position: center -780px;
+    }
+
+/*ico end*/
+#hrefTop
+{
+    width: 40px;
+    height: 30px;
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    background-color: #626262;
+    background-image: url(../imgs/nav/headtop.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+    #hrefTop:hover
+    {
+        background-color: #313131;
+    }
+
+.nav_option li div.o_ico span
+{
+    display: block;
+    float: left;
+    width: 6px;
+    height: 60px;
+}
+
+.nav_option li div.o_text
+{
+    width: 140px;
+    height: 60px;
+    float: left;
+    color: #ffffff;
+}
+
+.nav_option li:hover
+{
+    background: #5b6771;
+}
+
+    .nav_option li:hover div.o_ico
+    {
+        opacity: 1;
+    }
+
+        .nav_option li:hover div.o_ico span
+        {
+            background: #ca0c00;
+        }
+
+.nav_option li.optionSelect
+{
+    background: #5b6771;
+}
+
+    .nav_option li.optionSelect div.o_ico
+    {
+        opacity: 1;
+    }
+
+        .nav_option li.optionSelect div.o_ico span
+        {
+            background: #2aa738;
+        }
+/*
+.nav_o2 li div.o_ico {
+    background-image: url(../imgs/nav/BulidingIco.png);
+}*/
+
+.nav_building
+{
+    margin-top: 30px;
+    height: auto;
+    min-height:60px;
+    clear:both;
+   /*position: relative;*/ 
+}
+
+    .nav_building .navBuild_title
+    {
+        height: 60px;
+        position: relative;
+        width: 240px;
+        overflow: hidden;
+        background: #3e4850;
+    }
+
+    .nav_building:hover .navBuild_title
+    {
+        background: #5b6771;
+    }
+
+.navBuild_title span.b_normal
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 60px;
+    width: 30px;
+    display: block;
+    background-image: url(../imgs/nav/BulidingIco.png);
+    background-repeat: no-repeat;
+    background-position: center -360px;
+    opacity: .5;
+}
+
+.navBuild_title span.pull
+{
+    background-position: center -300px;
+    opacity: .5;
+}
+
+.navBuild_title span.b_normal:hover
+{
+    opacity: 1;
+}
+
+.navBuild_title span.pull:hover
+{
+    opacity: 1;
+}
+
+.navBuild_title b.b_more
+{
+    position: absolute;
+    top: 0;
+    left: 200px;
+    width: 40px;
+    height: 60px;
+    display: block;
+    background: url(../imgs/nav/BulidingIco.png) no-repeat center -240px;
+    opacity: .5;
+}
+
+.navBuild_title b.b_moreCur
+{
+    opacity: 1;
+}
+
+.navBuild_title div.navBulid_ico
+{
+    width: 100px;
+    height: 60px;
+    opacity: .5;
+    float: left;
+    background: url(../imgs/nav/BulidingIco.png) no-repeat 37px 0;
+}
+
+
+.navBuild_title div.navBulid_text
+{
+    width: 100px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    white-space: nowrap;
+    padding: 0 40px 0 0;
+    color: #ffffff;
+    float: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.nav_building:hover .navBuild_title div.navBulid_ico
+{
+    opacity: 1;
+}
+
+.BuildingChoose
+{
+    display: none;
+    position: absolute;
+    left: 252px;
+    top: 235px;
+    width: 490px;
+    height: 375px;
+    border: 1px solid #bbbbbb;
+    background: #f8f8f8;
+    padding-bottom: 5px;
+    box-shadow: 0px 2px 3px 1px rgba(0,0,0,.2);
+    -webkit-box-shadow: 0px 2px 3px 1px rgba(0,0,0,.2);
+}
+
+.choose_arrow
+{
+    position: absolute;
+    left: -20px;
+    top: 175px;
+    background: url(../imgs/nav/chooser_Arrow.png) no-repeat 0 0;
+    width: 20px;
+    height: 20px;
+}
+
+.buildC_head
+{
+    width: auto;
+    height: 40px;
+    padding: 10px 10px 0 25px;
+    border-bottom: 1px solid #bbbbbb;
+    background: #eeeeee;
+}
+
+    .buildC_head h3
+    {
+        text-align: left;
+        font-size: 18px;
+        color: #29292;
+        line-height: 30px;
+    }
+
+    .buildC_head .buildC_select
+    {
+        position: relative;
+        cursor: pointer;
+        border: 1px solid #cacaca;
+        border-radius: 3px;
+        background: #ffffff;
+        line-height: 28px;
+        text-align: left;
+        padding-left: 5px;
+        width: 125px;
+        height: 28px;
+        font-size: 14px;
+        color: #4f4f4f;
+        float: right;
+    }
+
+        .buildC_head .buildC_select .s_down_bar
+        {
+            float: right;
+            display: block;
+            width: 20px;
+            height: 25px;
+            background-image: url(../imgs/nav/buildC_downarrow.png);
+            background-repeat: no-repeat;
+            background-position: -2px 11px;
+        }
+
+        .buildC_head .buildC_select .s_down_barCur
+        {
+            background-position: -2px -8px;
+        }
+
+#build_name
+{
+    display: none;
+    border-radius: 0 0 3px 3px;
+    position: absolute;
+    left: -1px;
+    top: 29px;
+    border: 1px solid #cacaca;
+    border-top: 0;
+    width: 130px;
+    background: #ffffff;
+}
+
+    #build_name li
+    {
+        height: 25px;
+        line-height: 25px;
+        background: #f8f8f8;
+        color: #4f4f4f;
+        font-size: 12px;
+        padding-left: 10px;
+    }
+
+        #build_name li:hover
+        {
+            background: #e5e5e5;
+        }
+
+.buildC_head .buildC_headSearch
+{
+    position: relative;
+    float: right;
+    padding-right: 15px;
+}
+
+    .buildC_head .buildC_headSearch .b_search_ico
+    {
+        display: block;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        left: 10px;
+        top: 6px;
+        background: url(../imgs/nav/build_search.png) no-repeat 0 0;
+    }
+
+    .buildC_head .buildC_headSearch input.build_search
+    {
+        width: 60px;
+        height: 20px;
+        padding: 3px 15px 3px 30px;
+        border-radius: 26px;
+        border: 1px solid #cccccc;
+        line-height: 18px;
+        font-size: 16px;
+        color: #555555;
+        box-shadow: 0px 1px 4px 0px rgba(41,43,46,.2) inset;
+        -webkit-box-shadow: 0px 1px 4px 0px rgba(41,43,46,.2) inset;
+        -moz-box-shadow: 0px 1px 4px 0px rgba(41,43,46,.2) inset;
+    }
+
+.buildC_body
+{
+    width: auto;
+    height: 310px;
+    padding: 15px 18px 0 26px;
+    overflow-y: auto;
+    background: #f8f8f8;
+}
+
+.nav_build_Dwrap
+{
+    width: 100%;
+    min-height: 30px;
+    height: auto;
+}
+
+.n_buildOption
+{
+    min-height: 20px;
+    height: auto;
+    width: auto;
+    padding-bottom: 10px;
+}
+
+    .n_buildOption .option_head
+    {
+        height: 20px;
+        line-height: 20px;
+        color: #808080;
+    }
+
+        .n_buildOption .option_head .b_optionName
+        {
+            cursor: pointer;
+            width: auto;
+            float: left;
+            background: #f8f8f8;
+            padding-right: 10px;
+            font-size: 12px;
+        }
+
+.option_head .b_optionName .o_arr
+{
+    cursor: pointer;
+    width: 17px;
+    height: 20px;
+    float: left;
+    background-image: url(../imgs/nav/bSelect_arr.png);
+    background-repeat: no-repeat;
+    background-position: -4px 3px;
+}
+
+.option_head .b_optionName .o_arrCur
+{
+    background-position: -4px -26px;
+}
+
+.n_buildOption .option_head .b_optionLine
+{
+    width: auto;
+    height: 10px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.n_buildOption div.n_option_main
+{
+    display: none;
+}
+
+.nav_build_Dwrap_search
+{
+    display: none;
+}
+
+    .nav_build_Dwrap_search .n_buildOption div.n_option_main
+    {
+        display: block;
+    }
+
+.n_buildOption .build_Tname
+{
+    min-height: 10px;
+    height: auto;
+}
+
+    .n_buildOption .build_Tname li
+    {
+        height: 30px;
+        line-height: 30px;
+        width: 127px;
+        text-align: center;
+        font-size: 12px;
+        color: #292929;
+        margin: 10px 12px 0 0;
+        float: left;
+        border: 1px solid #999999;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        background: #f8f8f8;
+        cursor: pointer;
+    }
+
+        .n_buildOption .build_Tname li:hover
+        {
+            background: #eb525d;
+            color: #ffffff;
+        }
+
+        .n_buildOption .build_Tname li.chooseCur
+        {
+            background: #eb525d;
+            color: #ffffff;
+        }
+
+.py_container
+{
+    width: 100%;
+    height: auto;
+    min-height: 450px;
+}
+
+.py_content
+{
+    min-width: 1280px;
+    max-width: 1600px;
+    margin: 0 auto;
+    border-left: 1px solid #e4e4e4;
+    border-right: 1px solid #e4e4e4;
+    min-height: 950px;
+    height: auto;
+    padding-top: 60px;
+    background: #fff;
+}
+
+.app_py_content
+{
+    min-width: 1280px;
+    max-width: 1600px;
+    margin: 0 auto;
+    border-left: 1px solid #e4e4e4;
+    border-right: 1px solid #e4e4e4;
+    height: auto;
+    padding-top: 60px;
+    background: #fff;
+}
+
+.py_table
+{
+    width: 100%;
+}
+
+    .py_table tr
+    {
+        height: 300px;
+    }
+
+    .py_table td
+    {
+        height: 300px;
+        /*border-bottom: 1px dashed #cccccc;*/
+        /*border: 1px dashed red;*/
+        background: url(../imgs/home/line.png) repeat-x center bottom;
+    }
+
+.widget_loading
+{
+    width: 100%;
+    height: 100%;
+    background: url(../imgs/home/loading.gif) no-repeat center center;
+}
+
+
+/* 模块title 公共样式 */
+.widget .widget_name
+{
+    height: 35px;
+    line-height: 35px;
+    color: #aaaaaa;
+    font-size: 12px;
+}
+
+    .widget .widget_name em
+    {
+        height: 19px;
+        width: 4px;
+        background: #aaaaaa;
+        display: block;
+        float: left;
+        margin-top: 7px;
+        margin-right: 15px;
+    }
+
+    .widget .widget_name span.na
+    {
+        margin-right: 10px;
+        font-size: 16px;
+        color: #4f4f4f;
+    }
+/* chart_tip  css */
+.highcharts-tooltip > span
+{
+    background: #f8f8f8;
+    text-align: center;
+    border: 1px solid #bbbbbb;
+    -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    -ms-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+    .highcharts-tooltip > span > span
+    {
+        height: 25px;
+        line-height: 25px;
+    }
+
+        .highcharts-tooltip > span > span:first-child
+        {
+            font-size: 14px !important;
+            color: #292929 !important;
+            padding: 0 10px;
+        }
+
+        .highcharts-tooltip > span > span:last-child
+        {
+            font-size: 14px !important;
+            color: #808080 !important;
+            padding: 0 10px;
+        }

@@ -1,0 +1,102 @@
+<div class="widget_EnergyConserReform_1x1 widget">
+    <div class="widget_name">
+        <em></em><span class="na">{{title}}</span>
+        <span>{{subtitle}}</span>
+    </div>
+    <div class="wigetMain">
+        <div class="wigetUl">
+            <h2><span>项目名称：</span><span style="font-size: 16px; color: #292929;">停车场LED灯节能改造</span></h2>
+            <h3><span>竣工时间：</span><span style="font-size: 14px; color: #292929;">2010.03.15</span></h3>
+            <h4><span>累积节能量：</span><span
+                style="font-size: 18px; color: #292929;">1375kWh</span></h4>
+            <h5><span>相对节能率：</span><span
+                style="font-size: 18px; color: #292929;">10%</span></h5>
+        </div>
+        <div class="wigetUl">
+            <h2><span>项目名称：</span><span style="font-size: 16px; color: #292929;">冷站变频器控制节能改造</span></h2>
+            <h3><span>竣工时间：</span><span style="font-size: 14px; color: #292929;">2011.06.1</span></h3>
+            <h4><span>累积节能量：</span><span
+                style="font-size: 18px; color: #292929;">4539kWh</span></h4>
+            <h5><span>相对节能率：</span><span
+                style="font-size: 18px; color: #292929;">25%</span></h5>
+        </div>
+        <div class="wigetUl">
+            <h2><span>项目名称：</span><span style="font-size: 16px; color: #292929;">走廊LED灯节能改造</span></h2>
+            <h3><span>竣工时间：</span><span style="font-size: 14px; color: #292929;">2011.04.16</span></h3>
+            <h4><span>累积节能量：</span><span
+                style="font-size: 18px; color: #292929;">2143kWh</span></h4>
+            <h5><span>相对节能率：</span><span
+                style="font-size: 18px; color: #292929;">30%</span></h5>
+        </div>
+    </div>
+    <div class="energyConserSwitch">
+        <span class="enerSwitchLeft"></span>
+        <span class="switchSign"><span>1</span><span>/3</span></span>
+        <span class="enerSwitchRight"></span>
+    </div>
+</div>
+<script type="text/javascript">
+    var iTarget = 1;
+    var $wigetUl = $('.switchSign>span');
+    var contentWidth = parseInt($('.widget_EnergyConserReform_1x1 .wigetMain .wigetUl').eq(0).css('width'));
+    var classname = '.widget_EnergyConserReform_1x1 .wigetMain';
+    current = setInterval('switchRight(' + "'" + classname + "'" + ')', 10000);
+    $('.enerSwitchRight').on({
+        click: function () {
+            clearInterval(current);
+            switchRight(classname);
+        },
+        mouseout: function () {
+            if (current) {
+                clearInterval(current);
+            }
+            current = setInterval('switchLeft(' + classname + ')', 10000)
+        }
+    })
+    $('.enerSwitchLeft').on({
+        click: function () {
+            clearInterval(current);
+            switchLeft(classname);
+        },
+        mouseout: function () {
+            if (current) {
+                clearInterval(current);
+            }
+            current = setInterval('switchLeft(' + classname + ')', 10000)
+        }
+    })
+    function switchLeft(className) {
+        if (!$(className).is(":animated")) {
+            $(className).css({ "margin-left": -contentWidth });
+            $(className).css({ "margin-right": -contentWidth });
+            $divLast = $(className).children("div:last").remove();
+            $divLast.prependTo($(className));
+            $(className).animate({ "margin-left": "0px" }, 1000, function () {
+                if (iTarget <= 1) { iTarget = 3 }
+                else {
+                    iTarget -= 1;
+                }
+                $wigetUl.eq(0).text(iTarget);
+                $(className).css({ "margin-right": "0px" });
+            });
+        }
+    }
+    function switchRight(className) {//往右切屏幕
+        if (!$(className).is(":animated")) {
+            $(className).css({ "margin-right": -contentWidth });
+            $(className).animate({ "margin-left": -contentWidth }, 1000, function () {
+                $(className).css({ "margin-left": "0px" });
+                $(className).css({ "margin-right": "0px" });
+                $(className).css({ "margin-right": "0px" });
+                var $div = $(className).children("div:first").remove();
+                $div.appendTo($(className));
+                if (iTarget >= 3) { iTarget = 1 }
+                else {
+                    iTarget += 1;
+                }
+                $wigetUl.eq(0).text(iTarget);
+            });
+        }
+    }
+
+</script>

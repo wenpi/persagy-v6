@@ -1,0 +1,110 @@
+﻿/*本年能耗分项占比*/
+.widget_EnergyProportion_2x1 {
+    height: 300px;
+    background: #ffffff;
+    position: relative;
+}
+
+    .widget_EnergyProportion_2x1 .energyProportionBottom {
+        /*margin-top: 20px;*/
+        height:265px;
+        width: 100%;
+        overflow:hidden;
+    }
+
+        .widget_EnergyProportion_2x1 .energyProportionBottom .proportionBottomLeft {
+            height: 100%;
+            width: 42%;
+            float: left;
+        }
+
+            .widget_EnergyProportion_2x1 .energyProportionBottom .proportionBottomLeft .pie_chart {
+                margin-left: 60px;
+                margin-top: 43px;
+            }
+
+        .widget_EnergyProportion_2x1 .energyProportionBottom .proportionBottomRight {
+            height: 100%;
+            width: 52%;
+            float: left;
+            position: relative;
+            /*margin-top:20px;*/
+            display:table;
+        }
+    /*.widget_EnergyProportion_2x1 .proportionBottomRight .proportionEveryItem {
+    width:100%;
+    height:42px;
+    float:left;
+    margin-bottom:14px;
+    position:relative;
+}*/
+    .widget_EnergyProportion_2x1 .proportionBottomRight .proporRightCont {
+        width: 100%;
+        height: 100%;
+        display:table-cell;
+        vertical-align:middle;
+    }
+    .widget_EnergyProportion_2x1 .proportionBottomRight .proporRightContOver {
+            max-height:228px;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+    .widget_EnergyProportion_2x1 .energyProportionBottom .proporRightCont ul li {
+        min-width: 50%;
+        font-size: 12px;
+        color: #292929;
+        height: 45px;
+        margin-top: 10px;
+        float:left;
+
+    }
+
+        .widget_EnergyProportion_2x1 .energyProportionBottom .proporRightCont ul li > div:first-child {
+            width: 5px;
+            height: 35px;
+            float: left;
+            background: red;
+        }
+
+        .widget_EnergyProportion_2x1 .energyProportionBottom .proporRightCont ul li span {
+            display: block;
+            height: 20px;
+            line-height: 15px;
+            margin-left: 10px;
+        }
+
+            .widget_EnergyProportion_2x1 .energyProportionBottom .proporRightCont ul li span.co {
+                color: #aaaaaa;
+                line-height: 20px;
+            }
+
+            .widget_EnergyProportion_2x1 .energyProportionBottom .proporRightCont ul li span em.ri {
+                margin-right: 10px;
+            }
+    .widget_EnergyProportion_2x1 .proportionEveryItem .proportionLeftSign {
+        position: absolute;
+        top: 4px;
+        left: 0px;
+        width: 5px;
+        height: 34px;
+        background-color: #308286;
+    }
+/*.widget_EnergyProportion_2x1 .proportionEveryItem .proporItemPercent {
+    margin-left:8px;
+}*/
+/*.widget_EnergyProportion_2x1 .proportionEveryItem h2 {
+    font-size:12px;
+    color:#292929;
+    height:22px;
+    line-height:20px;
+    width:100%;
+    text-indent:14px;
+}
+.widget_EnergyProportion_2x1 .proportionEveryItem h3 {
+    font-size:12px;
+    color:#aaaaaa;
+    height:20px;
+    line-height:20px;
+    width:100%;
+    text-indent:14px;
+}*/

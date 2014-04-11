@@ -1,0 +1,30 @@
+﻿<div class="widget_EnergyItemRegion_2x1 widget">
+    <div class="widget_name">
+        <em></em><span class="na">{{title}}</span>
+        <span>{{subtitle}}</span>
+    </div>
+    <div class="energyProportionBottom">
+        <div class="proportionBottomLeft">
+            <div class="proportionBottomLeft_l">
+                <div class="pie_chart"></div>
+                <ul>
+                    <li>{{sum_title}}</li>
+                    <li>{{sum}}</li>
+                    <li>{{unit}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="proportionBottomRight">
+            <div class="proporRightCont">
+            <div class="proporRightContOver">
+            <ul>
+                <li ng-repeat="item in items">
+                    <div style="background: {{$parent.colors[$index]}};"></div>
+                    <span><em class="ri">{{item.regionName}}</em><em>{{item.energyProbe | number : 2}}%</em></span><span class="co">{{item.energy | number : 2}} {{$parent.unit}}</span>
+                </li>
+            </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

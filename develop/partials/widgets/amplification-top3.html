@@ -1,0 +1,32 @@
+﻿<!-- 用电指标增幅最大前三名  -->
+<div class="widget_amplification_1x2 widget">
+    <div class="widget_name">
+        <em></em><span class="na">{{title}}</span>
+        <span>{{subtitle}}</span>
+    </div>
+    <div style="position: absolute; width: 100%;">
+        <div class="energy_circle">
+            <canvas width="150" height="150"></canvas>
+        </div>
+        <div class="energy_circle">
+            <canvas width="150" height="150"></canvas>
+        </div>
+        <div class="energy_circle">
+            <canvas width="150" height="150"></canvas>
+        </div>
+    </div>
+    <div class="energy_con" ng-repeat="item in three">
+        <div class="energyvalue">
+            <span>{{item.count}}</span> <em>{{item.unit}}</em>
+        </div>
+        <div class="energy_circle_name">
+            <span style="background: {{$parent.color}}">{{$index+1}}</span>
+            <em>{{item.name}}</em>
+        </div>
+        <div class="energy_circle_percentage">
+            <span style="background:url(../../imgs/widgets/amplification-top3/percent_pic_{{$parent.type}}.png) no-repeat"></span>
+            <em>{{item.percent | number:2}}</em>
+            <em>%</em>
+        </div>
+    </div>
+</div>

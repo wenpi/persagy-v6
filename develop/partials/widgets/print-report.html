@@ -1,0 +1,13 @@
+﻿<div class="widget_PrintReport_1x1 widget">
+  <div class="widget_name"> <em></em>
+    <span class="na">{{title}}</span>
+    <span>{{subtitle}}</span>
+  </div>
+  <div class="printReport_more">更多</div>
+  <div class="printReportCont">
+    <div class="printReportItem" ng-repeat="report in reports">
+      <span>{{report.templateName}}</span>
+      <a ng-href="./report/{{report.templateId}}?bodySign={{$parent.body_sign}}"><span class="printItemDown">下载</span></a>
+    </div>
+  </div>
+</div>
